@@ -172,7 +172,6 @@ namespace Flow.Launcher.Plugin.Everything
             Helper.ValidateDataDirectory(bundledSDKDirectory, sdkDirectory);
 
             var sdkPath = Path.Combine(sdkDirectory, DLL);
-            Constant.EverythingSDKPath = sdkPath;
             _api.Load(sdkPath);
         }
 
