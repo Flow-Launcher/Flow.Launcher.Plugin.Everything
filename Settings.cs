@@ -22,20 +22,8 @@ namespace Flow.Launcher.Plugin.Everything
                 _ => explorerPath
             }; set => explorerPath = value;
         }
-        private string explorerArgs = "";
-        public string ExplorerArgs
-        {
-            get => ExplorerPath switch
-            {
-                "explorer" => explorerArgs.Trim() switch
-                {
-                    "" => "/select,%f",
-                    _ => explorerArgs
-                },
-                _ => explorerArgs
-            };
-            set => explorerArgs = value;
-        }
+        public string ExplorerArgs { get; set; } = "%s";
+        
 
         public List<ContextMenu> ContextMenus = new List<ContextMenu>();
 

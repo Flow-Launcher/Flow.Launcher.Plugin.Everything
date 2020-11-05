@@ -102,12 +102,25 @@ namespace Flow.Launcher.Plugin.Everything
                     bool hide;
                     try
                     {
-                        Process.Start(new ProcessStartInfo
+                        switch (searchResult.Type)
                         {
-                            FileName = path,
-                            UseShellExecute = true,
-                            WorkingDirectory = workingDir
-                        });
+                            case ResultType.Folder:
+                                Process.Start(_settings.ExplorerPath,
+                                    _settings.ExplorerArgs.Replace("%s", path));
+                                break;
+                            case ResultType.Volume:
+                            case ResultType.File:
+                                Process.Start(new ProcessStartInfo
+                                {
+                                    FileName = path,
+                                    UseShellExecute = true,
+                                    WorkingDirectory = workingDir
+                                });
+                                break;
+                            default:
+                                break;
+                        }
+
                         hide = true;
                     }
                     catch (Win32Exception)
@@ -212,8 +225,13 @@ namespace Flow.Launcher.Plugin.Everything
                         Action = _ =>
                         {
                             var parentPath = Directory.GetParent(record.FullPath);
+
+                            if ((menu.Argument.Trim() == "%s" || string.IsNullOrWhiteSpace(menu.Argument)) && _settings.ExplorerPath.Trim() == "explorer")
+                                menu.Argument = "/select,%f";
+
                             string argument = menu.Argument.Replace("%f", record.FullPath)
                                                            .Replace("%s", parentPath.ToString());
+
 
                             try
                             {

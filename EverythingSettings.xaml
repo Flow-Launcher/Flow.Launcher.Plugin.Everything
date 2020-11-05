@@ -32,9 +32,10 @@
         <TextBox  Grid.Row="3" Grid.Column="1" TextWrapping="NoWrap" VerticalAlignment="Center" Width="150" Height="30"
                  TextChanged="CustomizeExplorer" x:Name="CustomizeExplorerBox"/>
         <TextBlock  Grid.Row="3" Grid.Column="2" Text="Args" VerticalAlignment="Center" Margin="5"
-                       ToolTip="Enter the customized args you want to add for customized exploere. %f represent file path. %s represent parent path."></TextBlock>
+                       ToolTip="Enter the customized args you want to add for customized exploere. %s represent directory path (parent directory for file or directory itself).
+%f represent file path (only work for file)."></TextBlock>
         <TextBox  Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right"
-                  ToolTip="%f represent file path. %s represent parent path."
+                  ToolTip="%s represent directory path (parent directory for file or directory itself). %f represent file path (only work for file)."
                   Margin="0,0,5,0" Width="50" Height="30" x:Name="CustomizeArgsBox" TextChanged="CustomizeExplorerArgs"></TextBox>
 
     </Grid>
