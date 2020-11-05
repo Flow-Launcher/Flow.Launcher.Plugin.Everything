@@ -11,6 +11,32 @@ namespace Flow.Launcher.Plugin.Everything
 
         public string EditorPath { get; set; } = "";
 
+        private string explorerPath = "explorer";
+
+        public string ExplorerPath
+        {
+            get => explorerPath.Trim() switch
+            {
+                "" => "explorer",
+                "explorer.exe" => "explorer",
+                _ => explorerPath
+            }; set => explorerPath = value;
+        }
+        private string explorerArgs = "";
+        public string ExplorerArgs
+        {
+            get => ExplorerPath switch
+            {
+                "explorer" => explorerArgs.Trim() switch
+                {
+                    "" => "/select,%f",
+                    _ => explorerArgs
+                },
+                _ => explorerArgs
+            };
+            set => explorerArgs = value;
+        }
+
         public List<ContextMenu> ContextMenus = new List<ContextMenu>();
 
         public int MaxSearchCount { get; set; } = DefaultMaxSearchCount;
