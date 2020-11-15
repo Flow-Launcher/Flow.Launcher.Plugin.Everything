@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -123,8 +123,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Flow.Launcher.Infrastructure">
-      <HintPath>Flow.Launcher.Infrastructure.dll</HintPath>
+    <Reference Include="OLD_Flow.Launcher.Infrastructure">
+      <HintPath>OLD_Flow.Launcher.Infrastructure.dll</HintPath>
     </Reference>
   </ItemGroup>
 
