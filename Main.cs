@@ -106,7 +106,7 @@ namespace Flow.Launcher.Plugin.Everything
                         {
                             case ResultType.Folder:
                                 Process.Start(_settings.ExplorerPath,
-                                    _settings.ExplorerArgs.Replace("%s", path));
+                                    _settings.ExplorerArgs.Replace("%s", $"\"{path}\""));
                                 break;
                             case ResultType.Volume:
                             case ResultType.File:
