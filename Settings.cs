@@ -11,19 +11,28 @@ namespace Flow.Launcher.Plugin.Everything
 
         public string EditorPath { get; set; } = "";
 
-        private string explorerPath = "explorer";
+        internal const string ExploerePath = "explorer";
+
+        internal const string alternativeExplorerPath = "explorer.exe";
+
+        internal string explorerPath = ExploerePath;
 
         public string ExplorerPath
         {
             get => explorerPath.Trim() switch
             {
-                "" => "explorer",
-                "explorer.exe" => "explorer",
+                "" => ExploerePath,
+                alternativeExplorerPath => ExploerePath,
                 _ => explorerPath
             }; set => explorerPath = value;
         }
-        public string ExplorerArgs { get; set; } = "%s";
-        
+        internal string ExplorerArgs = DirectoryPathPlaceHolder;
+
+        internal const string DirectoryPathPlaceHolder = "%s";
+
+        internal const string FilePathPlaceHolder = "%f";
+
+        internal const string DefaultExplorerArgsWithFilePath = "select, %f";
 
         public List<ContextMenu> ContextMenus = new List<ContextMenu>();
 

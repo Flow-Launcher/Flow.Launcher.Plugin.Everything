@@ -106,7 +106,7 @@ namespace Flow.Launcher.Plugin.Everything
                         {
                             case ResultType.Folder:
                                 Process.Start(_settings.ExplorerPath,
-                                    _settings.ExplorerArgs.Replace("%s", $"\"{path}\""));
+                                    _settings.ExplorerArgs.Replace(Settings.DirectoryPathPlaceHolder, $"\"{path}\""));
                                 break;
                             case ResultType.Volume:
                             case ResultType.File:
@@ -226,11 +226,11 @@ namespace Flow.Launcher.Plugin.Everything
                         {
                             var parentPath = Directory.GetParent(record.FullPath);
 
-                            if ((menu.Argument.Trim() == "%s" || string.IsNullOrWhiteSpace(menu.Argument)) && _settings.ExplorerPath.Trim() == "explorer")
-                                menu.Argument = "/select,%f";
+                            if ((menu.Argument.Trim() == Settings.DirectoryPathPlaceHolder || string.IsNullOrWhiteSpace(menu.Argument)) && _settings.ExplorerPath.Trim() == Settings.ExploerePath)
+                                menu.Argument = Settings.DefaultExplorerArgsWithFilePath;
 
-                            string argument = menu.Argument.Replace("%f", record.FullPath)
-                                                           .Replace("%s", parentPath.ToString());
+                            string argument = menu.Argument.Replace(Settings.FilePathPlaceHolder, record.FullPath)
+                                                           .Replace(Settings.DirectoryPathPlaceHolder, parentPath.ToString());
 
 
                             try
