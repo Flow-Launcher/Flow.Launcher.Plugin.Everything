@@ -1,16 +1,15 @@
-﻿using System;
+﻿using Flow.Launcher.Infrastructure;
+using Flow.Launcher.Infrastructure.Logger;
+using Flow.Launcher.Infrastructure.Storage;
+using Flow.Launcher.Plugin.Everything.Everything;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using Flow.Launcher.Infrastructure;
-using Flow.Launcher.Infrastructure.Logger;
-using Flow.Launcher.Infrastructure.Storage;
-using Flow.Launcher.Plugin.Everything.Everything;
 
 namespace Flow.Launcher.Plugin.Everything
 {
@@ -19,7 +18,7 @@ namespace Flow.Launcher.Plugin.Everything
         public const string DLL = "Everything.dll";
         private readonly IEverythingApi _api = new EverythingApi();
 
-        
+
 
         private PluginInitContext _context;
 
@@ -40,7 +39,7 @@ namespace Flow.Launcher.Plugin.Everything
             if (!string.IsNullOrEmpty(query.Search))
             {
                 var keyword = query.Search;
-                
+
                 try
                 {
                     var searchList = _api.Search(keyword, cts.Token, maxCount: _settings.MaxSearchCount);
@@ -103,10 +102,25 @@ namespace Flow.Launcher.Plugin.Everything
                     bool hide;
                     try
                     {
-                        Process.Start(new ProcessStartInfo
+                        switch (searchResult.Type)
                         {
-                            FileName = path, UseShellExecute = true, WorkingDirectory = workingDir
-                        });
+                            case ResultType.Folder:
+                                Process.Start(_settings.ExplorerPath,
+                                    _settings.ExplorerArgs.Replace(Settings.DirectoryPathPlaceHolder, $"\"{path}\""));
+                                break;
+                            case ResultType.Volume:
+                            case ResultType.File:
+                                Process.Start(new ProcessStartInfo
+                                {
+                                    FileName = path,
+                                    UseShellExecute = true,
+                                    WorkingDirectory = workingDir
+                                });
+                                break;
+                            default:
+                                break;
+                        }
+
                         hide = true;
                     }
                     catch (Win32Exception)
@@ -125,7 +139,7 @@ namespace Flow.Launcher.Plugin.Everything
             return r;
         }
 
-        
+
 
         private List<ContextMenu> GetDefaultContextMenu()
         {
@@ -133,8 +147,8 @@ namespace Flow.Launcher.Plugin.Everything
             ContextMenu openFolderContextMenu = new ContextMenu
             {
                 Name = _context.API.GetTranslation("flowlauncher_plugin_everything_open_containing_folder"),
-                Command = "explorer.exe",
-                Argument = " /select,\"{path}\"",
+                Command = _settings.ExplorerPath,
+                Argument = $"{_settings.ExplorerArgs}",
                 ImagePath = "Images\\folder.png"
             };
 
@@ -210,7 +224,15 @@ namespace Flow.Launcher.Plugin.Everything
                         Title = contextMenu.Name,
                         Action = _ =>
                         {
-                            string argument = menu.Argument.Replace("{path}", record.FullPath);
+                            var parentPath = Directory.GetParent(record.FullPath);
+
+                            if ((menu.Argument.Trim() == Settings.DirectoryPathPlaceHolder || string.IsNullOrWhiteSpace(menu.Argument)) && _settings.ExplorerPath.Trim() == Settings.Explorer)
+                                menu.Argument = Settings.DefaultExplorerArgsWithFilePath;
+
+                            string argument = menu.Argument.Replace(Settings.FilePathPlaceHolder, record.FullPath)
+                                                           .Replace(Settings.DirectoryPathPlaceHolder, parentPath.ToString());
+
+
                             try
                             {
                                 Process.Start(menu.Command, argument);

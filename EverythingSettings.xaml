@@ -5,11 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              Loaded="View_Loaded"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="426.4">
     <Grid Margin="7,50" VerticalAlignment="Top" >
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -24,5 +25,14 @@
         <Label Grid.Row="1" Grid.Column="1" x:Name="EditorPath" Margin="10" HorizontalAlignment="Left" />
         <Button Grid.Row="1" Grid.Column="2" x:Name="OpenEditorPath" Content="..." Margin="10" 
                 HorizontalAlignment="Left" Click="EditorPath_Clicked"/>
+        <TextBlock Grid.Row="3" Text="{DynamicResource flowlauncher_plugin_everything_customized_title}" Margin="10,0,0,0"  VerticalAlignment="Center"
+                   ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_tooltip}"/>
+        <TextBox  Grid.Row="3" Grid.Column="1" TextWrapping="NoWrap" VerticalAlignment="Center" Width="150" Height="30"
+                 TextChanged="CustomizeExplorer" x:Name="CustomizeExplorerBox"/>
+        <TextBlock  Grid.Row="3" Grid.Column="2" Text="{DynamicResource flowlauncher_plugin_everything_customized_args}" VerticalAlignment="Center" Margin="5"
+                       ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_args_tooltip}"></TextBlock>
+        <TextBox  Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right"
+                  ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_args_textbox}"
+                  Margin="0,0,5,0" Width="50" Height="30" x:Name="CustomizeArgsBox" TextChanged="CustomizeExplorerArgs"></TextBox>
     </Grid>
 </UserControl>

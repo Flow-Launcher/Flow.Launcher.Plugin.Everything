@@ -154,3 +154,5 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+/.vs/slnx.sqlite
+/.vs/Flow.Launcher.Plugin.Everything/DesignTimeBuild/.dtbcache.v2

@@ -29,6 +29,8 @@ namespace Flow.Launcher.Plugin.Everything
             };
 
             EditorPath.Content = _settings.EditorPath;
+            CustomizeExplorerBox.Text = _settings.ExplorerPath;
+            CustomizeArgsBox.Text = _settings.ExplorerArgs;
         }
 
         private void EditorPath_Clicked(object sender, RoutedEventArgs e)
@@ -44,6 +46,16 @@ namespace Flow.Launcher.Plugin.Everything
             }
 
             EditorPath.Content = _settings.EditorPath;
+        }
+
+        private void CustomizeExplorer(object sender, TextChangedEventArgs e)
+        {
+            _settings.ExplorerPath = CustomizeExplorerBox.Text;
+        }
+
+        private void CustomizeExplorerArgs(object sender, TextChangedEventArgs e)
+        {
+            _settings.ExplorerArgs = CustomizeArgsBox.Text;
         }
     }
 }
