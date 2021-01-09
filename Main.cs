@@ -226,7 +226,7 @@ namespace Flow.Launcher.Plugin.Everything
                         {
                             var parentPath = Directory.GetParent(record.FullPath);
 
-                            if ((menu.Argument.Trim() == Settings.DirectoryPathPlaceHolder || string.IsNullOrWhiteSpace(menu.Argument)) && _settings.ExplorerPath.Trim() == Settings.ExploerePath)
+                            if ((menu.Argument.Trim() == Settings.DirectoryPathPlaceHolder || string.IsNullOrWhiteSpace(menu.Argument)) && _settings.ExplorerPath.Trim() == Settings.Explorer)
                                 menu.Argument = Settings.DefaultExplorerArgsWithFilePath;
 
                             string argument = menu.Argument.Replace(Settings.FilePathPlaceHolder, record.FullPath)

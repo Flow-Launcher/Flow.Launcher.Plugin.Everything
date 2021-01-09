@@ -11,18 +11,18 @@ namespace Flow.Launcher.Plugin.Everything
 
         public string EditorPath { get; set; } = "";
 
-        internal const string ExploerePath = "explorer";
+        internal const string Explorer = "explorer";
 
         internal const string alternativeExplorerPath = "explorer.exe";
 
-        internal string explorerPath = ExploerePath;
+        internal string explorerPath = Explorer;
 
         public string ExplorerPath
         {
             get => explorerPath.Trim() switch
             {
-                "" => ExploerePath,
-                alternativeExplorerPath => ExploerePath,
+                "" => Explorer,
+                alternativeExplorerPath => Explorer,
                 _ => explorerPath
             }; set => explorerPath = value;
         }
