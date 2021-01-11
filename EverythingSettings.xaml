@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -27,12 +27,12 @@
                 HorizontalAlignment="Left" Click="EditorPath_Clicked"/>
         <TextBlock Grid.Row="3" Text="{DynamicResource flowlauncher_plugin_everything_customized_title}" Margin="10,0,0,0"  VerticalAlignment="Center"
                    ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_tooltip}"/>
-        <TextBox  Grid.Row="3" Grid.Column="1" TextWrapping="NoWrap" VerticalAlignment="Center" Width="150" Height="30"
+        <TextBox  Grid.Row="3" Grid.Column="1" TextWrapping="NoWrap" VerticalAlignment="Center" Width="150" Height="35"
                  TextChanged="CustomizeExplorer" x:Name="CustomizeExplorerBox"/>
         <TextBlock  Grid.Row="3" Grid.Column="2" Text="{DynamicResource flowlauncher_plugin_everything_customized_args}" VerticalAlignment="Center" Margin="5"
                        ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_args_tooltip}"></TextBlock>
         <TextBox  Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right"
                   ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_args_textbox}"
-                  Margin="0,0,5,0" Width="50" Height="30" x:Name="CustomizeArgsBox" TextChanged="CustomizeExplorerArgs"></TextBox>
+                  Margin="0,0,5,0" Width="80" Height="35" x:Name="CustomizeArgsBox" TextChanged="CustomizeExplorerArgs"></TextBox>
     </Grid>
 </UserControl>
