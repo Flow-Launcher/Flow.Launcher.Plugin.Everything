@@ -66,7 +66,7 @@ namespace Flow.Launcher.Plugin.Everything
                         Action = _ =>
                         {
                             if(SharedCommands.FilesFolders.FileExists(installationFilePath))
-                            SharedCommands.FilesFolders.OpenPath(installationFilePath);
+                                SharedCommands.FilesFolders.OpenPath(installationFilePath);
 
                             return true;
                         }
