@@ -1,4 +1,4 @@
-﻿using Droplex;
+using Droplex;
 using Flow.Launcher.Infrastructure;
 using Flow.Launcher.Infrastructure.Logger;
 using Flow.Launcher.Infrastructure.Storage;
@@ -20,7 +20,7 @@ namespace Flow.Launcher.Plugin.Everything
         public const string DLL = "Everything.dll";
         private readonly IEverythingApi _api = new EverythingApi();
 
-        private const string installationFilePath = "C:\\Program Files\\Everything\\Everything.exe"; 
+        private string installationFilePath = "C:\\Program Files\\Everything\\Everything.exe"; 
 
         private PluginInitContext _context;
 
@@ -181,25 +181,32 @@ namespace Flow.Launcher.Plugin.Everything
 
         public void Init(PluginInitContext context)
         {
-            if (!File.Exists(installationFilePath))
+            var s = Utilities.GetInstalledPath();
+
+            if (string.IsNullOrEmpty(s))
             {
                 Task.Run(async delegate
                 {
                     context.API.ShowMsg(context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
-                                                        context.API.GetTranslation("flowlauncher_plugin_everything_installing_subtitle"),"",useMainWindowAsOwner: false);
+                                                        context.API.GetTranslation("flowlauncher_plugin_everything_installing_subtitle"), "", useMainWindowAsOwner: false);
 
                     await DroplexPackage.Drop(App.Everything1_3_4_686).ConfigureAwait(false);
 
                     context.API.ShowMsg(context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
-                                                        context.API.GetTranslation("flowlauncher_plugin_everything_installationsuccess_subtitle"),"", useMainWindowAsOwner: false);
+                                                        context.API.GetTranslation("flowlauncher_plugin_everything_installationsuccess_subtitle"), "", useMainWindowAsOwner: false);
 
                     SharedCommands.FilesFolders.OpenPath(installationFilePath);
+               
                 }).ContinueWith(t =>
                 {
                     Log.Exception("Main", $"Failed to install Everything service", t.Exception.InnerException, "DroplexPackage.Drop");
-                    MessageBox.Show(context.API.GetTranslation("flowlauncher_plugin_everything_installationfailed_subtitle"), 
+                    MessageBox.Show(context.API.GetTranslation("flowlauncher_plugin_everything_installationfailed_subtitle"),
                         context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"));
                 }, TaskContinuationOptions.OnlyOnFaulted);
+            }
+            else
+            {
+                installationFilePath = s;
             }
 
             _context = context;

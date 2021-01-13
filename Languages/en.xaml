@@ -29,5 +29,5 @@
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Installing Everything service. Please wait...</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Successfully installed Everything service</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Failed to automatically install Everything service. Please manually install it from https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_run_service">Click here to run it</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_run_service">Click here to start it</system:String>
 </ResourceDictionary>
