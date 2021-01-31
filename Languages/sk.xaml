@@ -18,7 +18,8 @@
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Vyhľadávanie súborov cez Everything</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Použiť cestu výsledku vyhľadávania ako pracovný priečinok spustiteľného súboru</system:String>
-
+    <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Launch skrytý</system:String>
+    
     <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">Na otváranie priečinka súborov môžete použiť vlastného správcu súborov vložením premennej prostredia, alebo absolútnej cesty k správcovi, ktorý chcete použiť. Na otestovanie môžete použiť príkazový riadok.</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_title">Vlastný správca súborov</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_args">Arg.</system:String>

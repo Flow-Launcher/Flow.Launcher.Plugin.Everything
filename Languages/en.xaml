@@ -18,6 +18,8 @@
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Search on-disk files using Everything</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Use search result's location as executable working directory</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Launch hidden</system:String>
+    
 
     <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">You can customized the explorer for opening the containing folder by inputing the Environmental Variable or the Absolute Path of the explorer you want to use. It will be useful to use CMD to test whether the it is avaliable.</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_title">Customized Explorer</system:String>

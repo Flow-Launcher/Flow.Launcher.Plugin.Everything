@@ -10,6 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -20,10 +21,13 @@
         <CheckBox Grid.Row="0" Grid.ColumnSpan="3" x:Name="UseLocationAsWorkingDir" Content="{DynamicResource 
                   flowlauncher_plugin_everything_use_location_as_working_dir}" 
                   Margin="10" HorizontalAlignment="Left" />
-        <Label Grid.Row="1" Margin="10" Content="{DynamicResource flowlauncher_plugin_everything_editor_path}"  
+        <CheckBox Grid.Row="1" Grid.ColumnSpan="3" x:Name="LaunchHidden" Content="{DynamicResource flowlauncher_plugin_everything_launch_hidden}" 
+                  Margin="10" HorizontalAlignment="Left" />
+
+        <Label Grid.Row="2" Margin="10" Content="{DynamicResource flowlauncher_plugin_everything_editor_path}"  
                HorizontalAlignment="Left"/>
-        <Label Grid.Row="1" Grid.Column="1" x:Name="EditorPath" Margin="10" HorizontalAlignment="Left" />
-        <Button Grid.Row="1" Grid.Column="2" x:Name="OpenEditorPath" Content="..." Margin="10" 
+        <Label Grid.Row="2" Grid.Column="1" x:Name="EditorPath" Margin="10" HorizontalAlignment="Left" />
+        <Button Grid.Row="2" Grid.Column="2" x:Name="OpenEditorPath" Content="..." Margin="10" 
                 HorizontalAlignment="Left" Click="EditorPath_Clicked"/>
         <TextBlock Grid.Row="3" Text="{DynamicResource flowlauncher_plugin_everything_customized_title}" Margin="10,0,0,0"  VerticalAlignment="Center"
                    ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_tooltip}"/>
