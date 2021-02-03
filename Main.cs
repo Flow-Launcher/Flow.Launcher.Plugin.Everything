@@ -106,7 +106,7 @@ namespace Flow.Launcher.Plugin.Everything
                 Title = Path.GetFileName(path),
                 SubTitle = path,
                 IcoPath = path,
-                TitleHighlightData = StringMatcher.FuzzySearch(keyword, Path.GetFileName(path)).MatchData,
+                TitleHighlightData = _context.API.FuzzySearch(keyword, Path.GetFileName(path)).MatchData,
                 Action = c =>
                 {
                     bool hide;
@@ -144,7 +144,7 @@ namespace Flow.Launcher.Plugin.Everything
                     return hide;
                 },
                 ContextData = searchResult,
-                SubTitleHighlightData = StringMatcher.FuzzySearch(keyword, path).MatchData
+                SubTitleHighlightData = _context.API.FuzzySearch(keyword, path).MatchData
             };
             return r;
         }
