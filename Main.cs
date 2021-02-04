@@ -195,24 +195,40 @@ namespace Flow.Launcher.Plugin.Everything
 
         public void Init(PluginInitContext context)
         {
+            _context = context;
+            _storage = new PluginJsonStorage<Settings>();
+            _settings = _storage.Load();
+            if (_settings.MaxSearchCount <= 0)
+                _settings.MaxSearchCount = Settings.DefaultMaxSearchCount;
+
             if (!_settings.EverythingInstalledPath.FileExists())
             {
                 var installedLocation = Utilities.GetInstalledPath();
 
-                if (System.Windows.Forms.MessageBox.Show(
+                if (string.IsNullOrEmpty(installedLocation) && 
+                    System.Windows.Forms.MessageBox.Show(
                         string.Format(context.API.GetTranslation("flowlauncher_plugin_everything_installing_select"), Environment.NewLine),
                                 context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
-                                System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes
-                    && string.IsNullOrEmpty(installedLocation))
+                                System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
-                    var dlg = new System.Windows.Forms.OpenFileDialog
+                    // Solves single thread apartment (STA) mode requirement error when using OpenFileDialog
+                    Thread t = new Thread(() =>
                     {
-                        InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
-                    };
+                        var dlg = new System.Windows.Forms.OpenFileDialog
+                        {
+                            InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
+                        };
 
-                    var result = dlg.ShowDialog();
-                    if (result == System.Windows.Forms.DialogResult.OK && string.IsNullOrEmpty(dlg.FileName))
-                        installedLocation = dlg.FileName;
+                        var result = dlg.ShowDialog();
+                        if (result == System.Windows.Forms.DialogResult.OK && !string.IsNullOrEmpty(dlg.FileName))
+                            installedLocation = dlg.FileName;
+
+                    });
+
+                    // Run your code from a thread that joins the STA Thread
+                    t.SetApartmentState(ApartmentState.STA);
+                    t.Start();
+                    t.Join();
                 }
 
                 if (string.IsNullOrEmpty(installedLocation))
@@ -242,14 +258,6 @@ namespace Flow.Launcher.Plugin.Everything
                 {
                     _settings.EverythingInstalledPath = installedLocation;
                 }
-            }
-
-            _context = context;
-            _storage = new PluginJsonStorage<Settings>();
-            _settings = _storage.Load();
-            if (_settings.MaxSearchCount <= 0)
-            {
-                _settings.MaxSearchCount = Settings.DefaultMaxSearchCount;
             }
 
             var pluginDirectory = context.CurrentPluginMetadata.PluginDirectory;
