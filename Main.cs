@@ -319,9 +319,9 @@ namespace Flow.Launcher.Plugin.Everything
                         try
                         {
                             if (record.Type == ResultType.File)
-                                System.IO.File.Delete(record.FullPath);
+                                File.Delete(record.FullPath);
                             else
-                                System.IO.Directory.Delete(record.FullPath);
+                                Directory.Delete(record.FullPath);
                         }
                         catch
                         {

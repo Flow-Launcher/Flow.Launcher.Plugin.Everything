@@ -30,6 +30,10 @@ namespace Flow.Launcher.Plugin.Everything
                 }
             }
 
+            var scoopInstalledPath = Environment.ExpandEnvironmentVariables(@"%userprofile%\scoop\apps\everything\current\Everything.exe");
+            if (File.Exists(scoopInstalledPath))
+                return scoopInstalledPath;
+
             return string.Empty;
         }
     }
