@@ -3,6 +3,7 @@ using Flow.Launcher.Infrastructure;
 using Flow.Launcher.Infrastructure.Logger;
 using Flow.Launcher.Infrastructure.Storage;
 using Flow.Launcher.Plugin.Everything.Everything;
+using Flow.Launcher.Plugin.SharedCommands;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +20,6 @@ namespace Flow.Launcher.Plugin.Everything
     {
         public const string DLL = "Everything.dll";
         private readonly IEverythingApi _api = new EverythingApi();
-
-        private string installationFilePath = "C:\\Program Files\\Everything\\Everything.exe";
 
         private PluginInitContext _context;
 
@@ -65,8 +64,8 @@ namespace Flow.Launcher.Plugin.Everything
                         IcoPath = "Images\\warning.png",
                         Action = _ =>
                         {
-                            if (SharedCommands.FilesFolders.FileExists(installationFilePath))
-                                SharedCommands.FilesFolders.OpenPath(installationFilePath);
+                            if (FilesFolders.FileExists(_settings.EverythingInstalledPath))
+                                FilesFolders.OpenPath(_settings.EverythingInstalledPath);
 
                             return true;
                         }
@@ -196,40 +195,69 @@ namespace Flow.Launcher.Plugin.Everything
 
         public void Init(PluginInitContext context)
         {
-            var s = Utilities.GetInstalledPath();
-
-            if (string.IsNullOrEmpty(s))
-            {
-                Task.Run(async delegate
-                {
-                    context.API.ShowMsg(context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
-                                                        context.API.GetTranslation("flowlauncher_plugin_everything_installing_subtitle"), "", useMainWindowAsOwner: false);
-
-                    await DroplexPackage.Drop(App.Everything1_3_4_686).ConfigureAwait(false);
-
-                    context.API.ShowMsg(context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
-                                                        context.API.GetTranslation("flowlauncher_plugin_everything_installationsuccess_subtitle"), "", useMainWindowAsOwner: false);
-
-                    SharedCommands.FilesFolders.OpenPath(installationFilePath);
-
-                }).ContinueWith(t =>
-                {
-                    Log.Exception("Main", $"Failed to install Everything service", t.Exception.InnerException, "DroplexPackage.Drop");
-                    MessageBox.Show(context.API.GetTranslation("flowlauncher_plugin_everything_installationfailed_subtitle"),
-                        context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"));
-                }, TaskContinuationOptions.OnlyOnFaulted);
-            }
-            else
-            {
-                installationFilePath = s;
-            }
-
             _context = context;
             _storage = new PluginJsonStorage<Settings>();
             _settings = _storage.Load();
             if (_settings.MaxSearchCount <= 0)
-            {
                 _settings.MaxSearchCount = Settings.DefaultMaxSearchCount;
+
+            if (!_settings.EverythingInstalledPath.FileExists())
+            {
+                var installedLocation = Utilities.GetInstalledPath();
+
+                if (string.IsNullOrEmpty(installedLocation) && 
+                    System.Windows.Forms.MessageBox.Show(
+                        string.Format(context.API.GetTranslation("flowlauncher_plugin_everything_installing_select"), Environment.NewLine),
+                                context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
+                                System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    // Solves single thread apartment (STA) mode requirement error when using OpenFileDialog
+                    Thread t = new Thread(() =>
+                    {
+                        var dlg = new System.Windows.Forms.OpenFileDialog
+                        {
+                            InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
+                        };
+
+                        var result = dlg.ShowDialog();
+                        if (result == System.Windows.Forms.DialogResult.OK && !string.IsNullOrEmpty(dlg.FileName))
+                            installedLocation = dlg.FileName;
+
+                    });
+
+                    // Run your code from a thread that joins the STA Thread
+                    t.SetApartmentState(ApartmentState.STA);
+                    t.Start();
+                    t.Join();
+                }
+
+                if (string.IsNullOrEmpty(installedLocation))
+                {
+                    Task.Run(async delegate
+                    {
+                        context.API.ShowMsg(context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
+                                                            context.API.GetTranslation("flowlauncher_plugin_everything_installing_subtitle"), "", useMainWindowAsOwner: false);
+
+                        await DroplexPackage.Drop(App.Everything1_3_4_686).ConfigureAwait(false);
+
+                        context.API.ShowMsg(context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
+                                                            context.API.GetTranslation("flowlauncher_plugin_everything_installationsuccess_subtitle"), "", useMainWindowAsOwner: false);
+
+                        _settings.EverythingInstalledPath = "C:\\Program Files\\Everything\\Everything.exe";
+
+                        FilesFolders.OpenPath(_settings.EverythingInstalledPath);
+
+                    }).ContinueWith(t =>
+                    {
+                        Log.Exception("Main", $"Failed to install Everything service", t.Exception.InnerException, "DroplexPackage.Drop");
+                        MessageBox.Show(context.API.GetTranslation("flowlauncher_plugin_everything_installationfailed_subtitle"),
+                            context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"));
+                    }, TaskContinuationOptions.OnlyOnFaulted);
+                }
+                else
+                {
+                    _settings.EverythingInstalledPath = installedLocation;
+                }
             }
 
             var pluginDirectory = context.CurrentPluginMetadata.PluginDirectory;
@@ -334,9 +362,9 @@ namespace Flow.Launcher.Plugin.Everything
                         try
                         {
                             if (record.Type == ResultType.File)
-                                System.IO.File.Delete(record.FullPath);
+                                File.Delete(record.FullPath);
                             else
-                                System.IO.Directory.Delete(record.FullPath);
+                                Directory.Delete(record.FullPath);
                         }
                         catch
                         {
