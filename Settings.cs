@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
-using Flow.Launcher.Infrastructure.Storage;
 
 namespace Flow.Launcher.Plugin.Everything
 {
@@ -40,6 +38,8 @@ namespace Flow.Launcher.Plugin.Everything
         public bool UseLocationAsWorkingDir { get; set; } = false;
 
         public bool LaunchHidden { get; set; } = false;
+
+        public string EverythingInstalledPath { get; set; }
     }
 
     public class ContextMenu
