@@ -20,7 +20,7 @@ namespace Flow.Launcher.Plugin.Everything
         public const string DLL = "Everything.dll";
         private readonly IEverythingApi _api = new EverythingApi();
 
-        private string installationFilePath = "C:\\Program Files\\Everything\\Everything.exe"; 
+        private string installationFilePath = "C:\\Program Files\\Everything\\Everything.exe";
 
         private PluginInitContext _context;
 
@@ -65,7 +65,7 @@ namespace Flow.Launcher.Plugin.Everything
                         IcoPath = "Images\\warning.png",
                         Action = _ =>
                         {
-                            if(SharedCommands.FilesFolders.FileExists(installationFilePath))
+                            if (SharedCommands.FilesFolders.FileExists(installationFilePath))
                                 SharedCommands.FilesFolders.OpenPath(installationFilePath);
 
                             return true;
@@ -115,9 +115,26 @@ namespace Flow.Launcher.Plugin.Everything
                         switch (searchResult.Type)
                         {
                             case ResultType.Folder:
-                                Process.Start(_settings.ExplorerPath,
-                                    _settings.ExplorerArgs.Replace(Settings.DirectoryPathPlaceHolder, $"\"{path}\""));
-                                break;
+                                if (!_settings.LaunchHidden)
+                                {
+                                    Process.Start(_settings.ExplorerPath,
+                                        _settings.ExplorerArgs.Replace(Settings.DirectoryPathPlaceHolder, $"\"{path}\""));
+                                }
+                                else
+                                {
+                                    ProcessStartInfo startInfo = new ProcessStartInfo();
+                                    //Hide the process
+                                    startInfo.UseShellExecute = false;
+                                    startInfo.RedirectStandardOutput = true;
+                                    startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                                    startInfo.CreateNoWindow = true;
+                                    //Set file and args
+                                    startInfo.FileName = _settings.ExplorerPath;
+                                    startInfo.Arguments = _settings.ExplorerArgs.Replace(Settings.DirectoryPathPlaceHolder, $"\"{path}\"");
+                                    //Start the process
+                                    Process proc = Process.Start(startInfo);
+                                }
+                                    break;
                             case ResultType.Volume:
                             case ResultType.File:
                                 Process.Start(new ProcessStartInfo
@@ -148,8 +165,6 @@ namespace Flow.Launcher.Plugin.Everything
             };
             return r;
         }
-
-
 
         private List<ContextMenu> GetDefaultContextMenu()
         {
@@ -196,7 +211,7 @@ namespace Flow.Launcher.Plugin.Everything
                                                         context.API.GetTranslation("flowlauncher_plugin_everything_installationsuccess_subtitle"), "", useMainWindowAsOwner: false);
 
                     SharedCommands.FilesFolders.OpenPath(installationFilePath);
-               
+
                 }).ContinueWith(t =>
                 {
                     Log.Exception("Main", $"Failed to install Everything service", t.Exception.InnerException, "DroplexPackage.Drop");

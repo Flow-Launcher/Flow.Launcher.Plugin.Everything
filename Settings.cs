@@ -38,6 +38,8 @@ namespace Flow.Launcher.Plugin.Everything
         public int MaxSearchCount { get; set; } = DefaultMaxSearchCount;
 
         public bool UseLocationAsWorkingDir { get; set; } = false;
+
+        public bool LaunchHidden { get; set; } = false;
     }
 
     public class ContextMenu
