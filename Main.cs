@@ -196,9 +196,25 @@ namespace Flow.Launcher.Plugin.Everything
 
         public void Init(PluginInitContext context)
         {
-            var s = Utilities.GetInstalledPath();
+            var installedLocation = Utilities.GetInstalledPath();
 
-            if (string.IsNullOrEmpty(s))
+            if (System.Windows.Forms.MessageBox.Show(
+                    string.Format(context.API.GetTranslation("flowlauncher_plugin_everything_installing_select"), Environment.NewLine),
+                            context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"), 
+                            System.Windows.Forms.MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes
+                && string.IsNullOrEmpty(installedLocation))
+            {
+                var dlg = new System.Windows.Forms.OpenFileDialog
+                {
+                    InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles)
+                };
+
+                var result = dlg.ShowDialog();
+                if (result == System.Windows.Forms.DialogResult.OK && string.IsNullOrEmpty(dlg.FileName))
+                    installedLocation = dlg.FileName;
+            }
+
+            if (string.IsNullOrEmpty(installedLocation))
             {
                 Task.Run(async delegate
                 {
@@ -221,7 +237,7 @@ namespace Flow.Launcher.Plugin.Everything
             }
             else
             {
-                installationFilePath = s;
+                installationFilePath = installedLocation;
             }
 
             _context = context;
