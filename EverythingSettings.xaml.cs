@@ -28,6 +28,18 @@ namespace Flow.Launcher.Plugin.Everything
                 _settings.UseLocationAsWorkingDir = false;
             };
 
+            LaunchHidden.IsChecked = _settings.LaunchHidden;
+
+            LaunchHidden.Checked += (o, e) =>
+            {
+                _settings.LaunchHidden = true;
+            };
+
+            LaunchHidden.Unchecked += (o, e) =>
+            {
+                _settings.LaunchHidden = false;
+            };
+
             EditorPath.Content = _settings.EditorPath;
             CustomizeExplorerBox.Text = _settings.ExplorerPath;
             CustomizeArgsBox.Text = _settings.ExplorerArgs;
