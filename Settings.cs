@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
-using Newtonsoft.Json;
 using Flow.Launcher.Infrastructure.Storage;
 
 namespace Flow.Launcher.Plugin.Everything
