@@ -1,0 +1,34 @@
+name: Publish Release
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.301
+      - name: get version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with: 
+          path: 'plugin.json'
+          prop_path: 'Version'
+      - run: echo ${{steps.version.outputs.prop}} 
+      - name: Build
+        run: |
+          dotnet publish 'Flow.Launcher.Plugin.Everything.csproj' --framework netcoreapp3.1  -c Release -o "Flow.Launcher.Plugin.Everything-${{steps.version.outputs.prop}}"
+          7z a -tzip "Flow.Launcher.Plugin.Everything-${{steps.version.outputs.prop}}.zip" "./Flow.Launcher.Plugin.Everything-${{steps.version.outputs.prop}}/*"
+          rm -r "Flow.Launcher.Plugin.Everything-${{steps.version.outputs.prop}}"
+      - name: Publish
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "Flow.Launcher.Plugin.Everything*.zip"
+          tag_name: "v${{steps.version.outputs.prop}}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
