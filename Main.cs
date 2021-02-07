@@ -184,7 +184,7 @@ namespace Flow.Launcher.Plugin.Everything
             {
                 Name = string.Format(_context.API.GetTranslation("flowlauncher_plugin_everything_open_with_editor"), Path.GetFileNameWithoutExtension(editorPath)),
                 Command = editorPath,
-                Argument = " \"{path}\"",
+                Argument = $" \"{Settings.FilePathPlaceHolder}\"",
                 ImagePath = editorPath
             };
 
