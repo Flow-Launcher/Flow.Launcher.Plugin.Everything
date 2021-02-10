@@ -1,8 +1,10 @@
 name: Publish Release
 
 on:
-  pull_request:
+  push:
     branches: [ master ]
+    paths-ignore: 
+      - .github/workflows/*
 
 jobs:
   publish:
