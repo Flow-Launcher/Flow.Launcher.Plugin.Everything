@@ -29,7 +29,7 @@ namespace Flow.Launcher.Plugin.Everything
 
         internal const string FilePathPlaceHolder = "%f";
 
-        internal const string DefaultExplorerArgsWithFilePath = "select, %f";
+        internal const string DefaultExplorerArgsWithFilePath = "/select, %f";
 
         public List<ContextMenu> ContextMenus = new List<ContextMenu>();
 
