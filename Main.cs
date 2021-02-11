@@ -133,7 +133,7 @@ namespace Flow.Launcher.Plugin.Everything
                                     //Start the process
                                     Process proc = Process.Start(startInfo);
                                 }
-                                    break;
+                                break;
                             case ResultType.Volume:
                             case ResultType.File:
                                 Process.Start(new ProcessStartInfo
@@ -205,7 +205,7 @@ namespace Flow.Launcher.Plugin.Everything
             {
                 var installedLocation = Utilities.GetInstalledPath();
 
-                if (string.IsNullOrEmpty(installedLocation) && 
+                if (string.IsNullOrEmpty(installedLocation) &&
                     System.Windows.Forms.MessageBox.Show(
                         string.Format(context.API.GetTranslation("flowlauncher_plugin_everything_installing_select"), Environment.NewLine),
                                 context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
@@ -310,8 +310,8 @@ namespace Flow.Launcher.Plugin.Everything
                             if ((menu.Argument.Trim() == Settings.DirectoryPathPlaceHolder || string.IsNullOrWhiteSpace(menu.Argument)) && _settings.ExplorerPath.Trim() == Settings.Explorer)
                                 menu.Argument = Settings.DefaultExplorerArgsWithFilePath;
 
-                            string argument = menu.Argument.Replace(Settings.FilePathPlaceHolder, record.FullPath)
-                                                           .Replace(Settings.DirectoryPathPlaceHolder, parentPath.ToString());
+                            string argument = menu.Argument.Replace(Settings.FilePathPlaceHolder, '"' + record.FullPath + '"')
+                                                           .Replace(Settings.DirectoryPathPlaceHolder, '"' + parentPath.ToString() + '"');
 
 
                             try
