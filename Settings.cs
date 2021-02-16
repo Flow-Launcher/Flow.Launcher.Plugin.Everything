@@ -23,7 +23,7 @@ namespace Flow.Launcher.Plugin.Everything
                 _ => explorerPath
             }; set => explorerPath = value;
         }
-        internal string ExplorerArgs = DirectoryPathPlaceHolder;
+        public string ExplorerArgs { get; set; } = DirectoryPathPlaceHolder;
 
         internal const string DirectoryPathPlaceHolder = "%s";
 
