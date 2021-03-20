@@ -40,6 +40,8 @@ namespace Flow.Launcher.Plugin.Everything
         public bool LaunchHidden { get; set; } = false;
 
         public string EverythingInstalledPath { get; set; }
+        
+        public SortOption SortOption { get; set; }
     }
 
     public class ContextMenu
@@ -49,4 +51,11 @@ namespace Flow.Launcher.Plugin.Everything
         public string Argument { get; set; }
         public string ImagePath { get; set; }
     }
+}
+public enum SortOption
+{
+    NameAsc = 1,
+    NameDesc = 2,
+    ModifiedDateAsc = 13,
+    ModifiedDateDesc = 14
 }

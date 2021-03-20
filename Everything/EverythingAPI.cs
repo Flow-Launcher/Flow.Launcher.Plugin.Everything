@@ -148,6 +148,7 @@ namespace Flow.Launcher.Plugin.Everything.Everything
                 EverythingApiDllImport.Everything_SetSearchW(keyWord);
                 EverythingApiDllImport.Everything_SetOffset(offset);
                 EverythingApiDllImport.Everything_SetMax(maxCount);
+                EverythingApiDllImport.Everything_SetSort(Settings.);
 
                 if (token.IsCancellationRequested)
                 {
@@ -170,8 +171,13 @@ namespace Flow.Launcher.Plugin.Everything.Everything
                     }
 
                     EverythingApiDllImport.Everything_GetResultFullPathNameW(idx, _buffer, BufferSize);
-
-                    var result = new SearchResult { FullPath = _buffer.ToString() };
+                    
+                    var result = new SearchResult
+                    {
+                        FullPath = _buffer.ToString()
+                    };
+                    
+                    
                     if (EverythingApiDllImport.Everything_IsFolderResult(idx))
                         result.Type = ResultType.Folder;
                     else if (EverythingApiDllImport.Everything_IsFileResult(idx))
