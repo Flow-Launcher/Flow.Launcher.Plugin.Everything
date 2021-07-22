@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
-using Flow.Launcher.Infrastructure.Logger;
 using Flow.Launcher.Plugin.Everything.Everything.Exceptions;
 
 namespace Flow.Launcher.Plugin.Everything.Everything
