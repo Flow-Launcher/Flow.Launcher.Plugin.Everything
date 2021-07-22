@@ -1,17 +1,26 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using Flow.Launcher.Plugin.Everything.Everything;
 using Microsoft.Win32;
 
 namespace Flow.Launcher.Plugin.Everything
 {
     public partial class EverythingSettings : UserControl
     {
-        private readonly Settings _settings;
+        public Settings _settings { get; }
+
+        public SortOption SortOption { get; set; }
+        public SortOption[] SortOptions { get; set; }
+
+        public string SortText { get; set; } = "SortBy";
 
         public EverythingSettings(Settings settings)
         {
-            InitializeComponent();
             _settings = settings;
+            SortOption = settings.SortOption;
+            SortOptions = settings.SortOptions;
+            DataContext = this;
+            InitializeComponent();
         }
 
         private void View_Loaded(object sender, RoutedEventArgs re)

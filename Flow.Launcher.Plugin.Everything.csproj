@@ -1,7 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <ProjectGuid>{230AE83F-E92E-4E69-8355-426B305DA9C0}</ProjectGuid>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Flow.Launcher.Plugin.Everything</RootNamespace>
@@ -13,7 +12,6 @@
     <OutputType>Library</OutputType>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
-  
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
@@ -25,7 +23,6 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
@@ -35,22 +32,17 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-
   <ItemGroup>
-    <Content Include="EverythingSDK\x64\Everything.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="EverythingSDK\x86\Everything.dll">
+    <Content Include="EverythingSDK\*\Everything.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  
   <ItemGroup>
     <None Include="plugin.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Remove="Output\**" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="Languages\*.xaml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -59,20 +51,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Flow.Launcher.Plugin" Version="1.4.0" />
-    <PackageReference Include="Droplex" Version="1.2.0" />
-	<PackageReference Include="JetBrains.Annotations" Version="2020.3.0" />
+    <PackageReference Include="Flow.Launcher.Plugin" Version="2.0.0" />
+    <PackageReference Include="Droplex" Version="1.4.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2021.2.0" />
     <PackageReference Include="System.Runtime" Version="4.3.1" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Flow.Launcher.Infrastructure">
-      <HintPath>OLD_Flow.Launcher.Infrastructure.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -84,20 +68,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Remove="Output\**" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Remove="Output\**" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
+  <ItemGroup>
+    <Page Remove="Output\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EverythingSDK\x64\" />
+  </ItemGroup>
 </Project>

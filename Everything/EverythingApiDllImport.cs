@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Flow.Launcher.Plugin.Everything.Everything
@@ -88,5 +89,52 @@ namespace Flow.Launcher.Plugin.Everything.Everything
 
         [DllImport(Main.DLL)]
         internal static extern void Everything_Reset();
+
+        // Everything 1.4
+
+        [DllImport(Main.DLL)]
+        public static extern void Everything_SetSort(SortOption dwSortType);
+        [DllImport(Main.DLL)]
+        public static extern SortOption Everything_GetSort();
+        [DllImport(Main.DLL)]
+        public static extern uint Everything_GetResultListSort();
+        [DllImport(Main.DLL)]
+        public static extern void Everything_SetRequestFlags(uint dwRequestFlags);
+        [DllImport(Main.DLL)]
+        public static extern uint Everything_GetRequestFlags();
+        [DllImport(Main.DLL)]
+        public static extern uint Everything_GetResultListRequestFlags();
+        [DllImport("Everything64.dll", CharSet = CharSet.Unicode)]
+        public static extern IntPtr Everything_GetResultExtension(uint nIndex);
+        [DllImport(Main.DLL)]
+        public static extern bool Everything_GetResultSize(uint nIndex, out long lpFileSize);
+        [DllImport(Main.DLL)]
+        public static extern bool Everything_GetResultDateCreated(uint nIndex, out long lpFileTime);
+        [DllImport(Main.DLL)]
+        public static extern bool Everything_GetResultDateModified(uint nIndex, out long lpFileTime);
+        [DllImport(Main.DLL)]
+        public static extern bool Everything_GetResultDateAccessed(uint nIndex, out long lpFileTime);
+        [DllImport(Main.DLL)]
+        public static extern uint Everything_GetResultAttributes(uint nIndex);
+        [DllImport(Main.DLL, CharSet = CharSet.Unicode)]
+        public static extern IntPtr Everything_GetResultFileListFileName(uint nIndex);
+        [DllImport(Main.DLL)]
+        public static extern uint Everything_GetResultRunCount(uint nIndex);
+        [DllImport(Main.DLL)]
+        public static extern bool Everything_GetResultDateRun(uint nIndex, out long lpFileTime);
+        [DllImport(Main.DLL)]
+        public static extern bool Everything_GetResultDateRecentlyChanged(uint nIndex, out long lpFileTime);
+        [DllImport(Main.DLL, CharSet = CharSet.Unicode)]
+        public static extern IntPtr Everything_GetResultHighlightedFileName(uint nIndex);
+        [DllImport(Main.DLL, CharSet = CharSet.Unicode)]
+        public static extern IntPtr Everything_GetResultHighlightedPath(uint nIndex);
+        [DllImport(Main.DLL, CharSet = CharSet.Unicode)]
+        public static extern IntPtr Everything_GetResultHighlightedFullPathAndFileName(uint nIndex);
+        [DllImport(Main.DLL)]
+        public static extern uint Everything_GetRunCountFromFileName(string lpFileName);
+        [DllImport(Main.DLL)]
+        public static extern bool Everything_SetRunCountFromFileName(string lpFileName, uint dwRunCount);
+        [DllImport(Main.DLL)]
+        public static extern uint Everything_IncRunCountFromFileName(string lpFileName);
     }
 }
