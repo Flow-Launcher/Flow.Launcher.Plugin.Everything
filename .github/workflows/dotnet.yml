@@ -6,6 +6,7 @@ on:
     branches: [ master ]
     paths-ignore: 
       - .github/workflows/*
+      - '**/README.md'
 
 jobs:
   publish:
