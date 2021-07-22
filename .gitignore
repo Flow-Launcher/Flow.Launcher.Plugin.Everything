@@ -159,3 +159,6 @@ $RECYCLE.BIN/
 
 # Rider
 /.idea
+
+# Visual Studio Launch Profile
+/Properties/launchSettings.json
