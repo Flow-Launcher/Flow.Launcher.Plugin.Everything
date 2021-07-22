@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Flow.Launcher.Plugin.Everything.Everything;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Flow.Launcher.Plugin.Everything
 {
@@ -40,6 +43,10 @@ namespace Flow.Launcher.Plugin.Everything
         public bool LaunchHidden { get; set; } = false;
 
         public string EverythingInstalledPath { get; set; }
+
+        public SortOption[] SortOptions { get; set; } = Enum.GetValues<SortOption>().Cast<SortOption>().ToArray();
+
+        public SortOption SortOption { get; set; } = SortOption.NAME_ASCENDING;
     }
 
     public class ContextMenu

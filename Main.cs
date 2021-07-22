@@ -34,7 +34,7 @@ namespace Flow.Launcher.Plugin.Everything
 
                 try
                 {
-                    var searchList = _api.Search(keyword, cts.Token, maxCount: _settings.MaxSearchCount);
+                    var searchList = _api.Search(keyword, cts.Token, _settings.SortOption, maxCount: _settings.MaxSearchCount);
                     if (searchList == null)
                     {
                         return results;

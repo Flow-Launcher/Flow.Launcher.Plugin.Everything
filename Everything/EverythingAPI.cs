@@ -17,7 +17,7 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         /// <param name="offset">The offset.</param>
         /// <param name="maxCount">The max count.</param>
         /// <returns></returns>
-        List<SearchResult> Search(string keyWord, CancellationToken token, int offset = 0, int maxCount = 100);
+        List<SearchResult> Search(string keyWord, CancellationToken token, SortOption sortOption = SortOption.NAME_ASCENDING, int offset = 0, int maxCount = 100);
 
         void Load(string sdkPath);
     }
@@ -48,14 +48,8 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         /// <value><c>true</c> if [match path]; otherwise, <c>false</c>.</value>
         public bool MatchPath
         {
-            get
-            {
-                return EverythingApiDllImport.Everything_GetMatchPath();
-            }
-            set
-            {
-                EverythingApiDllImport.Everything_SetMatchPath(value);
-            }
+            get => EverythingApiDllImport.Everything_GetMatchPath();
+            set => EverythingApiDllImport.Everything_SetMatchPath(value);
         }
 
         /// <summary>
@@ -64,14 +58,8 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         /// <value><c>true</c> if [match case]; otherwise, <c>false</c>.</value>
         public bool MatchCase
         {
-            get
-            {
-                return EverythingApiDllImport.Everything_GetMatchCase();
-            }
-            set
-            {
-                EverythingApiDllImport.Everything_SetMatchCase(value);
-            }
+            get => EverythingApiDllImport.Everything_GetMatchCase();
+            set => EverythingApiDllImport.Everything_SetMatchCase(value);
         }
 
         /// <summary>
@@ -80,14 +68,8 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         /// <value><c>true</c> if [match whole word]; otherwise, <c>false</c>.</value>
         public bool MatchWholeWord
         {
-            get
-            {
-                return EverythingApiDllImport.Everything_GetMatchWholeWord();
-            }
-            set
-            {
-                EverythingApiDllImport.Everything_SetMatchWholeWord(value);
-            }
+            get => EverythingApiDllImport.Everything_GetMatchWholeWord();
+            set => EverythingApiDllImport.Everything_SetMatchWholeWord(value);
         }
 
         /// <summary>
@@ -96,20 +78,14 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         /// <value><c>true</c> if [enable regex]; otherwise, <c>false</c>.</value>
         public bool EnableRegex
         {
-            get
-            {
-                return EverythingApiDllImport.Everything_GetRegex();
-            }
-            set
-            {
-                EverythingApiDllImport.Everything_SetRegex(value);
-            }
+            get => EverythingApiDllImport.Everything_GetRegex();
+            set => EverythingApiDllImport.Everything_SetRegex(value);
         }
 
         /// <summary>
         /// Resets this instance.
         /// </summary>
-        public void Reset()
+        private void Reset()
         {
             lock (_syncObject)
             {
@@ -125,7 +101,7 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         /// <param name="offset">The offset.</param>
         /// <param name="maxCount">The max count.</param>
         /// <returns></returns>
-        public List<SearchResult> Search(string keyWord, CancellationToken token, int offset = 0, int maxCount = 100)
+        public List<SearchResult> Search(string keyWord, CancellationToken token, SortOption sortOption = SortOption.NAME_ASCENDING, int offset = 0, int maxCount = 100)
         {
             if (string.IsNullOrEmpty(keyWord))
                 throw new ArgumentNullException(nameof(keyWord));
@@ -147,6 +123,7 @@ namespace Flow.Launcher.Plugin.Everything.Everything
                 EverythingApiDllImport.Everything_SetSearchW(keyWord);
                 EverythingApiDllImport.Everything_SetOffset(offset);
                 EverythingApiDllImport.Everything_SetMax(maxCount);
+                EverythingApiDllImport.Everything_SetSort(sortOption);
 
                 if (token.IsCancellationRequested)
                 {
@@ -185,7 +162,7 @@ namespace Flow.Launcher.Plugin.Everything.Everything
             }
         }
 
-        [DllImport("kernel32.dll")]
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
         private static extern int LoadLibrary(string name);
 
         public void Load(string sdkPath)

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Flow.Launcher.Plugin.Everything": {
+      "commandName": "Project"
+    },
+    "Flow Launcher": {
+      "commandName": "Executable",
+      "executablePath": "D:\\Document\\Dotnet\\Flow.Launcher\\Output\\Release\\Flow.Launcher.exe"
+    }
+  }
+}

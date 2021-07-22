@@ -33,9 +33,6 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="EverythingSDK\x64\Everything.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="EverythingSDK\x86\Everything.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -88,5 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Page Remove="Output\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EverythingSDK\x64\" />
   </ItemGroup>
 </Project>
