@@ -12,8 +12,6 @@ namespace Flow.Launcher.Plugin.Everything
         public SortOption SortOption { get; set; }
         public SortOption[] SortOptions { get; set; }
 
-        public string SortText { get; set; } = "SortBy";
-
         public EverythingSettings(Settings settings)
         {
             _settings = settings;

@@ -1,5 +1,6 @@
 using Droplex;
 using Flow.Launcher.Plugin.Everything.Everything;
+using Flow.Launcher.Plugin.Everything.Helper;
 using Flow.Launcher.Plugin.SharedCommands;
 using System;
 using System.Collections.Generic;
@@ -188,6 +189,8 @@ namespace Flow.Launcher.Plugin.Everything
         {
             _context = context;
             _settings = context.API.LoadSettingJsonStorage<Settings>();
+            SortOptionTranlationHelper.API = context.API;
+
             if (_settings.MaxSearchCount <= 0)
                 _settings.MaxSearchCount = Settings.DefaultMaxSearchCount;
 
