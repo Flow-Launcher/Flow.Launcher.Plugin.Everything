@@ -5,4 +5,4 @@ This is the repo for the Flow.Launcher's Everything plugin. This plugin has been
 
 **Dependency:**
 
-Requires Everything service(automatically installed) higher than 1.4.1
+Requires Everything service(automatically installed) version 1.4.1 or higher

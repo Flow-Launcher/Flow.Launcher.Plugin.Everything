@@ -1,10 +1,12 @@
 name: Publish Release
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master ]
     paths-ignore: 
       - .github/workflows/*
+      - '**/README.md'
 
 jobs:
   publish:
@@ -14,7 +16,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: 3.1.301
+          dotnet-version: 5.0.x
       - name: get version
         id: version
         uses: notiz-dev/github-action-json-property@release
@@ -24,7 +26,7 @@ jobs:
       - run: echo ${{steps.version.outputs.prop}} 
       - name: Build
         run: |
-          dotnet publish 'Flow.Launcher.Plugin.Everything.csproj' --framework netcoreapp3.1  -c Release -o "Flow.Launcher.Plugin.Everything"
+          dotnet publish 'Flow.Launcher.Plugin.Everything.csproj' --framework net5.0-windows  -c Release -o "Flow.Launcher.Plugin.Everything"
           7z a -tzip "Flow.Launcher.Plugin.Everything.zip" "./Flow.Launcher.Plugin.Everything/*"
           rm -r "Flow.Launcher.Plugin.Everything"
       - name: Publish

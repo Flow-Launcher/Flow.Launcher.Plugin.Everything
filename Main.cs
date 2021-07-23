@@ -231,7 +231,7 @@ namespace Flow.Launcher.Plugin.Everything
                         context.API.ShowMsg(context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
                             context.API.GetTranslation("flowlauncher_plugin_everything_installing_subtitle"), "", useMainWindowAsOwner: false);
 
-                        await DroplexPackage.Drop(App.Everything1_3_4_686).ConfigureAwait(false);
+                        await DroplexPackage.Drop(App.Everything1_4_1_1009).ConfigureAwait(false);
 
                         context.API.ShowMsg(context.API.GetTranslation("flowlauncher_plugin_everything_installing_title"),
                             context.API.GetTranslation("flowlauncher_plugin_everything_installationsuccess_subtitle"), "", useMainWindowAsOwner: false);
