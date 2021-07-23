@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:helper="clr-namespace:Flow.Launcher.Plugin.Everything.Helper"
              mc:Ignorable="d" 
              Loaded="View_Loaded"
              DataContext="{Binding RelativeSource={RelativeSource Self}}"
@@ -20,6 +21,9 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <helper:EnumNameConverter x:Key="enumNameConverter"/>
+        </Grid.Resources>
         <CheckBox Grid.Row="0" Grid.ColumnSpan="3" x:Name="UseLocationAsWorkingDir" Content="{DynamicResource 
                   flowlauncher_plugin_everything_use_location_as_working_dir}" 
                   Margin="10" HorizontalAlignment="Left" />
@@ -47,7 +51,20 @@
         <TextBox  Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right"
                   ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_args_textbox}"
                   Margin="0,0,5,0" Width="80" Height="35" x:Name="CustomizeArgsBox" TextChanged="CustomizeExplorerArgs"></TextBox>
-        <TextBlock Margin="10" Text="{Binding SortText}" Grid.Row="4"/>
-        <ComboBox Grid.Row="4" Grid.Column="1" Width="200" SelectedItem="{Binding _settings.SortOption}" ItemsSource="{Binding _settings.SortOptions, Mode=OneWay}"/>
+        <TextBlock Margin="10" Text="{DynamicResource flowlauncher_plugin_everything_sort_by}" Grid.Row="4"/>
+
+        <ComboBox Grid.Row="4" 
+                  Grid.Column="1" 
+                  Width="200" 
+                  SelectedItem="{Binding _settings.SortOption}" 
+                  ItemsSource="{Binding _settings.SortOptions, Mode=OneWay}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="{Binding Converter={StaticResource enumNameConverter}}"/>
+                    </Grid>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
 </UserControl>

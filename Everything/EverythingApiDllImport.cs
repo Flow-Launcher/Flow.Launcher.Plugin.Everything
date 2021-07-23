@@ -95,6 +95,8 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         [DllImport(Main.DLL)]
         public static extern void Everything_SetSort(SortOption dwSortType);
         [DllImport(Main.DLL)]
+        public static extern bool Everything_IsFastSort(SortOption dwSortType);
+        [DllImport(Main.DLL)]
         public static extern SortOption Everything_GetSort();
         [DllImport(Main.DLL)]
         public static extern uint Everything_GetResultListSort();
