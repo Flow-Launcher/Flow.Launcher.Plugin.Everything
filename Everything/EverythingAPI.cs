@@ -123,13 +123,18 @@ namespace Flow.Launcher.Plugin.Everything.Everything
                 EverythingApiDllImport.Everything_SetSearchW(keyWord);
                 EverythingApiDllImport.Everything_SetOffset(offset);
                 EverythingApiDllImport.Everything_SetMax(maxCount);
+                
+                if(!EverythingApiDllImport.Everything_IsFastSort(sortOption))
+                {
+                    throw new InvalidOperationException("The Sort Option is not Fast Sort, it may take a long time to finish the query");
+                }
                 EverythingApiDllImport.Everything_SetSort(sortOption);
 
                 if (token.IsCancellationRequested)
                 {
                     return null;
                 }
-
+                
 
                 if (!EverythingApiDllImport.Everything_QueryW(true))
                 {
