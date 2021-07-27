@@ -4,7 +4,7 @@
   "Name": "Everything",
   "Description": "Search Everything",
   "Author": "qianlifeng,orzfly",
-  "Version": "1.5.1",
+  "Version": "1.5.2",
   "Language": "csharp",
   "Website": "https://github.com/Flow-Launcher/Flow.Launcher.Plugin.Everything",
   "IcoPath": "Images\\find.png",
