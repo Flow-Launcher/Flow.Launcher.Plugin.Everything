@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -128,7 +128,7 @@ namespace Flow.Launcher.Plugin.Everything.Everything
                 CheckAndThrowExceptionOnError();
 
                 if(!fastSortOptionEnabled)
-                    throw new InvalidOperationException("The Sort Option is not Fast Sort, it may take a long time to finish the query");
+                    throw new InvalidOperationException(Main._context.API.GetTranslation("flowlauncher_plugin_everything_fastsort_error"));
 
                 EverythingApiDllImport.Everything_SetSort(sortOption);
 

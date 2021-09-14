@@ -19,7 +19,7 @@ namespace Flow.Launcher.Plugin.Everything
         public const string DLL = "Everything.dll";
         private readonly IEverythingApi _api = new EverythingApi();
 
-        private PluginInitContext _context;
+        internal static PluginInitContext _context;
 
         private Settings _settings;
         private CancellationTokenSource _cancellationTokenSource;
