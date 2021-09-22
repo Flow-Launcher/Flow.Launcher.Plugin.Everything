@@ -4,7 +4,6 @@
 
     <system:String x:Key="flowlauncher_plugin_everything_is_not_running">Everything Service is not running</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_query_error">Error while querying Everything</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_fastsort_error">Fast Sort option not enabled in Flow's Everything plugin settings, it may take a long time to finish the query</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copied">Copied</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">Can’t start {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Open parent folder</system:String>
@@ -44,7 +43,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Date Run</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
-
+    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Warning: This is not a Fast Sort option, searches may be slow</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything Installation</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Installing Everything service. Please wait...</system:String>

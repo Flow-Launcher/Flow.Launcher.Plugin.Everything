@@ -1,6 +1,7 @@
 using Droplex;
 using Flow.Launcher.Plugin.Everything.Everything;
 using Flow.Launcher.Plugin.Everything.Helper;
+using Flow.Launcher.Plugin.Everything.ViewModels;
 using Flow.Launcher.Plugin.SharedCommands;
 using System;
 using System.Collections.Generic;
@@ -376,7 +377,7 @@ namespace Flow.Launcher.Plugin.Everything
 
         public Control CreateSettingPanel()
         {
-            return new EverythingSettings(_settings);
+            return new EverythingSettings(_settings, new SettingsViewModel(_api, _settings));
         }
     }
 }

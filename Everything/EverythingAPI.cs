@@ -20,6 +20,8 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         List<SearchResult> Search(string keyWord, CancellationToken token, SortOption sortOption = SortOption.NAME_ASCENDING, int offset = 0, int maxCount = 100);
 
         void Load(string sdkPath);
+
+        bool IsFastSortOption(SortOption sortOption);
     }
 
     public sealed class EverythingApi : IEverythingApi
@@ -94,6 +96,16 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         }
 
         /// <summary>
+        /// Checks whether the sort option is Fast Sort.
+        /// </summary>
+        public bool IsFastSortOption(SortOption sortOption)
+        {
+            var fastSortOptionEnabled = EverythingApiDllImport.Everything_IsFastSort(sortOption);
+
+            return fastSortOptionEnabled;
+        }
+
+        /// <summary>
         /// Searches the specified key word and reset the everything API afterwards
         /// </summary>
         /// <param name="keyWord">The key word.</param>
@@ -123,12 +135,6 @@ namespace Flow.Launcher.Plugin.Everything.Everything
                 EverythingApiDllImport.Everything_SetSearchW(keyWord);
                 EverythingApiDllImport.Everything_SetOffset(offset);
                 EverythingApiDllImport.Everything_SetMax(maxCount);
-
-                var fastSortOptionEnabled = EverythingApiDllImport.Everything_IsFastSort(sortOption);
-                CheckAndThrowExceptionOnError();
-
-                if(!fastSortOptionEnabled)
-                    throw new InvalidOperationException(Main._context.API.GetTranslation("flowlauncher_plugin_everything_fastsort_error"));
 
                 EverythingApiDllImport.Everything_SetSort(sortOption);
 
