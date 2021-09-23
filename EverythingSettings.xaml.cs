@@ -79,7 +79,10 @@ namespace Flow.Launcher.Plugin.Everything
         {
             // on load, tbFastSortWarning control will not have been loaded yet
             if (tbFastSortWarning is not null)
+            {
                 tbFastSortWarning.Visibility = vm.FastSortWarningVisibility;
+                tbFastSortWarning.Text = vm.GetSortOptionWarningMessage;
+            }
         }
     }
 }

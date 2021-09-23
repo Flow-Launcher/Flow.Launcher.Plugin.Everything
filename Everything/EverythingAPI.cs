@@ -102,6 +102,10 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         {
             var fastSortOptionEnabled = EverythingApiDllImport.Everything_IsFastSort(sortOption);
 
+            // If the Everything service is not running, then this call will incorrectly report 
+            // the state as false. This checks for errors thrown by the api and up to the caller to handle.
+            CheckAndThrowExceptionOnError();
+
             return fastSortOptionEnabled;
         }
 

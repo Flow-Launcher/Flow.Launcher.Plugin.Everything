@@ -4,7 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:helper="clr-namespace:Flow.Launcher.Plugin.Everything.Helper"
-             xmlns:vm="clr-namespace:Flow.Launcher.Plugin.Everything.ViewModels"
              mc:Ignorable="d" 
              Loaded="View_Loaded"
              d:DesignHeight="300" d:DesignWidth="426.4">
@@ -70,7 +69,7 @@
         </ComboBox>
 
         <TextBlock Name ="tbFastSortWarning"  Grid.Row="4" Grid.Column="2" Margin="10 5 10 0" TextAlignment="Left"
-                   Text="{DynamicResource flowlauncher_plugin_everything_nonfastsort_warning}"
+                   Text="{Binding GetSortOptionWarningMessage}"
                    Visibility ="{Binding FastSortWarningVisibility}"
                    Foreground="Orange" TextWrapping="Wrap" />
     </Grid>

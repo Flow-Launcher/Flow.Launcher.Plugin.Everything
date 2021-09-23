@@ -377,7 +377,7 @@ namespace Flow.Launcher.Plugin.Everything
 
         public Control CreateSettingPanel()
         {
-            return new EverythingSettings(_settings, new SettingsViewModel(_api, _settings));
+            return new EverythingSettings(_settings, new SettingsViewModel(_api, _settings, _context));
         }
     }
 }
