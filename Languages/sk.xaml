@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
-    <system:String x:Key="flowlauncher_plugin_everything_is_not_running">Služba Everything nie je spustená</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_is_not_running">Upozornenie: Služba Everything nie je spustená</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_query_error">Chyba pri dopytovaní Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copied">Skopírované</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">{0} sa nedá spustiť</system:String>
@@ -43,6 +43,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Dátum spustenia</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Upozornenie: Toto nie je voľba Fast Sort, vyhľadávanie môže byť pomalé</system:String>
     
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Inštalácia Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Inštaluje sa služba Everything. Čakajte, prosím…</system:String>
