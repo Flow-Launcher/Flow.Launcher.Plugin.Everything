@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -20,6 +20,8 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         List<SearchResult> Search(string keyWord, CancellationToken token, SortOption sortOption = SortOption.NAME_ASCENDING, int offset = 0, int maxCount = 100);
 
         void Load(string sdkPath);
+
+        bool IsFastSortOption(SortOption sortOption);
     }
 
     public sealed class EverythingApi : IEverythingApi
@@ -94,6 +96,20 @@ namespace Flow.Launcher.Plugin.Everything.Everything
         }
 
         /// <summary>
+        /// Checks whether the sort option is Fast Sort.
+        /// </summary>
+        public bool IsFastSortOption(SortOption sortOption)
+        {
+            var fastSortOptionEnabled = EverythingApiDllImport.Everything_IsFastSort(sortOption);
+
+            // If the Everything service is not running, then this call will incorrectly report 
+            // the state as false. This checks for errors thrown by the api and up to the caller to handle.
+            CheckAndThrowExceptionOnError();
+
+            return fastSortOptionEnabled;
+        }
+
+        /// <summary>
         /// Searches the specified key word and reset the everything API afterwards
         /// </summary>
         /// <param name="keyWord">The key word.</param>
@@ -123,11 +139,7 @@ namespace Flow.Launcher.Plugin.Everything.Everything
                 EverythingApiDllImport.Everything_SetSearchW(keyWord);
                 EverythingApiDllImport.Everything_SetOffset(offset);
                 EverythingApiDllImport.Everything_SetMax(maxCount);
-                
-                if(!EverythingApiDllImport.Everything_IsFastSort(sortOption))
-                {
-                    throw new InvalidOperationException("The Sort Option is not Fast Sort, it may take a long time to finish the query");
-                }
+
                 EverythingApiDllImport.Everything_SetSort(sortOption);
 
                 if (token.IsCancellationRequested)

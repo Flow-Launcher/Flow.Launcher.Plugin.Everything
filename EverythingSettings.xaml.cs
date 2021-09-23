@@ -1,80 +1,88 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Flow.Launcher.Plugin.Everything.Everything;
+using Flow.Launcher.Plugin.Everything.ViewModels;
 using Microsoft.Win32;
 
 namespace Flow.Launcher.Plugin.Everything
 {
     public partial class EverythingSettings : UserControl
     {
-        public Settings _settings { get; }
+        public Settings settings { get; }
 
-        public SortOption SortOption { get; set; }
-        public SortOption[] SortOptions { get; set; }
+        private SettingsViewModel vm;
 
-        public EverythingSettings(Settings settings)
+        public EverythingSettings(Settings settings, SettingsViewModel vm)
         {
-            _settings = settings;
-            SortOption = settings.SortOption;
-            SortOptions = settings.SortOptions;
-            DataContext = this;
+            this.settings = settings;
+            this.vm = vm;
+            DataContext = vm;
             InitializeComponent();
         }
 
         private void View_Loaded(object sender, RoutedEventArgs re)
         {
-            UseLocationAsWorkingDir.IsChecked = _settings.UseLocationAsWorkingDir;
+            UseLocationAsWorkingDir.IsChecked = settings.UseLocationAsWorkingDir;
 
             UseLocationAsWorkingDir.Checked += (o, e) =>
             {
-                _settings.UseLocationAsWorkingDir = true;
+                settings.UseLocationAsWorkingDir = true;
             };
 
             UseLocationAsWorkingDir.Unchecked += (o, e) =>
             {
-                _settings.UseLocationAsWorkingDir = false;
+                settings.UseLocationAsWorkingDir = false;
             };
 
-            LaunchHidden.IsChecked = _settings.LaunchHidden;
+            LaunchHidden.IsChecked = settings.LaunchHidden;
 
             LaunchHidden.Checked += (o, e) =>
             {
-                _settings.LaunchHidden = true;
+                settings.LaunchHidden = true;
             };
 
             LaunchHidden.Unchecked += (o, e) =>
             {
-                _settings.LaunchHidden = false;
+                settings.LaunchHidden = false;
             };
 
-            EditorPath.Content = _settings.EditorPath;
-            CustomizeExplorerBox.Text = _settings.ExplorerPath;
-            CustomizeArgsBox.Text = _settings.ExplorerArgs;
+            EditorPath.Content = settings.EditorPath;
+            CustomizeExplorerBox.Text = settings.ExplorerPath;
+            CustomizeArgsBox.Text = settings.ExplorerArgs;
         }
 
         private void EditorPath_Clicked(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Executable File(*.exe)| *.exe";
-            if (!string.IsNullOrEmpty(_settings.EditorPath))
-                openFileDialog.InitialDirectory = System.IO.Path.GetDirectoryName(_settings.EditorPath);
+            if (!string.IsNullOrEmpty(settings.EditorPath))
+                openFileDialog.InitialDirectory = System.IO.Path.GetDirectoryName(settings.EditorPath);
 
             if (openFileDialog.ShowDialog() == true)
             {
-                _settings.EditorPath = openFileDialog.FileName;
+                settings.EditorPath = openFileDialog.FileName;
             }
 
-            EditorPath.Content = _settings.EditorPath;
+            EditorPath.Content = settings.EditorPath;
         }
 
         private void CustomizeExplorer(object sender, TextChangedEventArgs e)
         {
-            _settings.ExplorerPath = CustomizeExplorerBox.Text;
+            settings.ExplorerPath = CustomizeExplorerBox.Text;
         }
 
         private void CustomizeExplorerArgs(object sender, TextChangedEventArgs e)
         {
-            _settings.ExplorerArgs = CustomizeArgsBox.Text;
+            settings.ExplorerArgs = CustomizeArgsBox.Text;
+        }
+
+        private void onSelectionChange(object sender, SelectionChangedEventArgs e)
+        {
+            // on load, tbFastSortWarning control will not have been loaded yet
+            if (tbFastSortWarning is not null)
+            {
+                tbFastSortWarning.Visibility = vm.FastSortWarningVisibility;
+                tbFastSortWarning.Text = vm.GetSortOptionWarningMessage;
+            }
         }
     }
 }
