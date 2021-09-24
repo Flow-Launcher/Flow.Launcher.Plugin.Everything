@@ -6,7 +6,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_query_error">Chyba pri dopytovaní Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copied">Skopírované</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">{0} sa nedá spustiť</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Otvoriť nadradený priečinok</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Otvoriť umiestnenie súboru</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Otvoriť v {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">Cesta k editoru</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy_path">Kopírovať cestu</system:String>
