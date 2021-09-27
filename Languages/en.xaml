@@ -21,7 +21,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Launch hidden</system:String>
     
 
-    <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">You can customized the explorer for opening the containing folder by inputing the Environmental Variable or the Absolute Path of the explorer you want to use. It will be useful to use CMD to test whether the it is avaliable.</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">You can customize the opening of the containing folder by inputing the Environmental Variable or the Absolute Path of the File Explorer you want to use. It will be useful to use CMD to test whether the it is available.</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_title">Customized Explorer</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_args">Args</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_args_tooltip">Enter the customized args you want to add for customized explorer. %s represent directory path (parent directory for file or directory itself). %f represent file path (only work for file).</system:String>
