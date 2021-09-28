@@ -73,7 +73,7 @@ namespace Flow.Launcher.Plugin.Everything
                         SubTitle = e.Message,
                         Action = _ =>
                         {
-                            Clipboard.SetText(e.Message + "\r\n" + e.StackTrace);
+                            Clipboard.SetDataObject(e.Message + "\r\n" + e.StackTrace);
                             _context.API.ShowMsg(_context.API.GetTranslation("flowlauncher_plugin_everything_copied"), null, string.Empty);
                             return false;
                         },
@@ -328,7 +328,7 @@ namespace Flow.Launcher.Plugin.Everything
                 Title = _context.API.GetTranslation("flowlauncher_plugin_everything_copy_path"),
                 Action = (context) =>
                 {
-                    Clipboard.SetText(record.FullPath);
+                    Clipboard.SetDataObject(record.FullPath);
                     return true;
                 },
                 IcoPath = icoPath
