@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Markup.Localizer;
 
 namespace Flow.Launcher.Plugin.Everything
 {
@@ -107,25 +108,7 @@ namespace Flow.Launcher.Plugin.Everything
                         switch (searchResult.Type)
                         {
                             case ResultType.Folder:
-                                if (!_settings.LaunchHidden)
-                                {
-                                    Process.Start(_settings.ExplorerPath,
-                                        _settings.ExplorerArgs.Replace(Settings.DirectoryPathPlaceHolder, $"\"{path}\""));
-                                }
-                                else
-                                {
-                                    ProcessStartInfo startInfo = new ProcessStartInfo();
-                                    //Hide the process
-                                    startInfo.UseShellExecute = false;
-                                    startInfo.RedirectStandardOutput = true;
-                                    startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                                    startInfo.CreateNoWindow = true;
-                                    //Set file and args
-                                    startInfo.FileName = _settings.ExplorerPath;
-                                    startInfo.Arguments = _settings.ExplorerArgs.Replace(Settings.DirectoryPathPlaceHolder, $"\"{path}\"");
-                                    //Start the process
-                                    Process proc = Process.Start(startInfo);
-                                }
+                                _context.API.OpenDirectory(path);
                                 break;
                             case ResultType.Volume:
                             case ResultType.File:
@@ -279,80 +262,85 @@ namespace Flow.Launcher.Plugin.Everything
 
         public List<Result> LoadContextMenus(Result selectedResult)
         {
-            SearchResult record = selectedResult.ContextData as SearchResult;
-            List<Result> contextMenus = new List<Result>();
-            if (record == null) return contextMenus;
+            if (selectedResult.ContextData is not SearchResult record)
+                return new List<Result>();
 
-            List<ContextMenu> availableContextMenus = new List<ContextMenu>();
-            availableContextMenus.AddRange(GetDefaultContextMenu());
-            availableContextMenus.AddRange(_settings.ContextMenus);
+            var icoPath = record.Type == ResultType.File ? "Images\\file.png" : "Images\\folder.png";
 
-            if (record.Type == ResultType.File)
+            List<Result> contextMenus = new List<Result>
             {
-                foreach (ContextMenu contextMenu in availableContextMenus)
+                new()
                 {
-                    var menu = contextMenu;
-                    contextMenus.Add(new Result
+                    Title = _context.API.GetTranslation("flowlauncher_plugin_everything_open_containing_folder"),
+                    Action = _ =>
                     {
-                        Title = contextMenu.Name,
-                        Action = _ =>
-                        {
-                            var parentPath = Directory.GetParent(record.FullPath);
-
-                            if ((menu.Argument.Trim() == Settings.DirectoryPathPlaceHolder || string.IsNullOrWhiteSpace(menu.Argument)) && _settings.ExplorerPath.Trim() == Settings.Explorer)
-                                menu.Argument = Settings.DefaultExplorerArgsWithFilePath;
-
-                            string argument = menu.Argument.Replace(Settings.FilePathPlaceHolder, '"' + record.FullPath + '"')
-                                .Replace(Settings.DirectoryPathPlaceHolder, '"' + parentPath.ToString() + '"');
-
-
-                            try
-                            {
-                                Process.Start(menu.Command, argument);
-                            }
-                            catch
-                            {
-                                _context.API.ShowMsg(string.Format(_context.API.GetTranslation("flowlauncher_plugin_everything_canot_start"), record.FullPath), string.Empty, string.Empty);
-                                return false;
-                            }
-                            return true;
-                        },
-                        IcoPath = contextMenu.ImagePath
-                    });
+                        _context.API.OpenDirectory(Path.GetDirectoryName(record.FullPath), record.FullPath);
+                        return true;
+                    },
+                    IcoPath = icoPath,
+                    Glyph = new GlyphInfo("/Resources/#Segoe Fluent Icons", "\ue8de")
                 }
+            };
+
+            if (record.Type is ResultType.File)
+            {
+                var notepadPath = string.IsNullOrEmpty(_settings.EditorPath) ? "notepad.exe" : _settings.EditorPath;
+                contextMenus.Add(new Result
+                {
+                    Title = string.Format(_context.API.GetTranslation("flowlauncher_plugin_everything_open_with_editor"),
+                        Path.GetFileNameWithoutExtension(notepadPath)),
+                    Action = state =>
+                    {
+                        using var notepad = new Process();
+                        notepad.StartInfo = new ProcessStartInfo()
+                        {
+                            FileName = notepadPath,
+                            Arguments = record.FullPath
+                        };
+                        if (state.SpecialKeyState.CtrlPressed && state.SpecialKeyState.ShiftPressed)
+                        {
+                            notepad.StartInfo.Verb = "runAs";
+                        }
+                        Task.Run(() => notepad.Start());
+                        return true;
+                    },
+                    Glyph = new GlyphInfo("/Resources/#Segoe Fluent Icons", "\ue932")
+                });
             }
 
-            var icoPath = (record.Type == ResultType.File) ? "Images\\file.png" : "Images\\folder.png";
-            contextMenus.Add(new Result
-            {
-                Title = _context.API.GetTranslation("flowlauncher_plugin_everything_copy_path"),
-                Action = (context) =>
+            contextMenus.Add(
+                new()
                 {
-                    Clipboard.SetDataObject(record.FullPath);
-                    return true;
-                },
-                IcoPath = icoPath
-            });
-
-            contextMenus.Add(new Result
-            {
-                Title = _context.API.GetTranslation("flowlauncher_plugin_everything_copy"),
-                Action = (context) =>
-                {
-                    Clipboard.SetFileDropList(new System.Collections.Specialized.StringCollection
+                    Title = _context.API.GetTranslation("flowlauncher_plugin_everything_copy_path"),
+                    Action = _ =>
                     {
-                        record.FullPath
-                    });
-                    return true;
-                },
-                IcoPath = icoPath
-            });
+                        Clipboard.SetDataObject(record.FullPath);
+                        return true;
+                    },
+                    IcoPath = icoPath,
+                    Glyph = new GlyphInfo("/Resources/#Segoe Fluent Icons", "\ue8c8")
+                });
+            contextMenus.Add(
+                new Result
+                {
+                    Title = _context.API.GetTranslation("flowlauncher_plugin_everything_copy"),
+                    Action = _ =>
+                    {
+                        Clipboard.SetFileDropList(new System.Collections.Specialized.StringCollection
+                        {
+                            record.FullPath
+                        });
+                        return true;
+                    },
+                    IcoPath = icoPath,
+                    Glyph = new GlyphInfo("/Resources/#Segoe Fluent Icons", "\ue8c8")
+                });
 
-            if (record.Type == ResultType.File || record.Type == ResultType.Folder)
+            if (record.Type is ResultType.File or ResultType.Folder)
                 contextMenus.Add(new Result
                 {
                     Title = _context.API.GetTranslation("flowlauncher_plugin_everything_delete"),
-                    Action = (context) =>
+                    Action = _ =>
                     {
                         try
                         {
@@ -369,9 +357,9 @@ namespace Flow.Launcher.Plugin.Everything
 
                         return true;
                     },
-                    IcoPath = icoPath
+                    IcoPath = icoPath,
+                    Glyph = new ("/Resources/#Segoe Fluent Icons","\ue74d")
                 });
-
             return contextMenus;
         }
 
@@ -380,4 +368,5 @@ namespace Flow.Launcher.Plugin.Everything
             return new EverythingSettings(_settings, new SettingsViewModel(_api, _settings, _context));
         }
     }
+
 }
