@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:helper="clr-namespace:Flow.Launcher.Plugin.Everything.Helper"
+             xmlns:vm="clr-namespace:Flow.Launcher.Plugin.Everything.ViewModels"
              mc:Ignorable="d" 
              Loaded="View_Loaded"
              d:DesignHeight="300" d:DesignWidth="426.4">
@@ -12,7 +13,6 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -34,31 +34,15 @@
         <Label Grid.Row="2" Grid.Column="1" x:Name="EditorPath" Margin="10" HorizontalAlignment="Left" />
         <Button Grid.Row="2" Grid.Column="2" x:Name="OpenEditorPath" Content="..." Margin="10" 
                 HorizontalAlignment="Left" Click="EditorPath_Clicked"/>
-        <TextBlock Grid.Row="3" Text="{DynamicResource flowlauncher_plugin_everything_customized_title}" Margin="10,0,0,0"  VerticalAlignment="Center"
-                   ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_tooltip}"/>
-        <TextBox  Grid.Row="3"
-                  Grid.Column="1"
-                  TextWrapping="NoWrap" 
-                  VerticalAlignment="Center" 
-                  HorizontalAlignment="Left"
-                  Width="150" 
-                  Height="35"
-                  Margin="0,5,0,0"
-                  TextChanged="CustomizeExplorer" x:Name="CustomizeExplorerBox"/>
-        <TextBlock  Grid.Row="3" Grid.Column="2" Text="{DynamicResource flowlauncher_plugin_everything_customized_args}" VerticalAlignment="Center" Margin="5"
-                       ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_args_tooltip}"></TextBlock>
-        <TextBox  Grid.Row="3" Grid.Column="2" HorizontalAlignment="Right"
-                  ToolTip="{DynamicResource flowlauncher_plugin_everything_customized_args_textbox}"
-                  Margin="0,0,5,0" Width="80" Height="35" x:Name="CustomizeArgsBox" TextChanged="CustomizeExplorerArgs"></TextBox>
-        <TextBlock Margin="10 15 10 10" Text="{DynamicResource flowlauncher_plugin_everything_sort_by}" Grid.Row="4"/>
+        <TextBlock Margin="10 15 10 10" Text="{DynamicResource flowlauncher_plugin_everything_sort_by}" Grid.Row="3"/>
 
-        <ComboBox Grid.Row="4" 
+        <ComboBox Grid.Row="3" 
                   Grid.Column="1" 
                   Width="200"
                   Margin="0 10 0 0"
                   SelectedItem="{Binding SortOption}" 
                   ItemsSource="{Binding GetSortOptions, Mode=OneWay}"
-                  SelectionChanged="onSelectionChange">
+                  SelectionChanged="onSelectionChange" d:DataContext="{d:DesignInstance vm:SettingsViewModel}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

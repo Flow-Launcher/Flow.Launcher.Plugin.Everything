@@ -11,8 +11,6 @@ namespace Flow.Launcher.Plugin.Everything.Helper
 {
     class EnumNameConverter : IValueConverter
     {
-        private Dictionary<string, SortOption> translationRecord = new Dictionary<string, SortOption>();
-
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return value is SortOption option ? option.GetTranslatedName() : value;
