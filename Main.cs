@@ -262,8 +262,7 @@ namespace Flow.Launcher.Plugin.Everything
         public List<Result> LoadContextMenus(Result selectedResult)
         {
             if (selectedResult.ContextData is not SearchResult record)
-                if (selectedResult.ContextData is not SearchResult record)
-                    return new List<Result>();
+                return new List<Result>();
 
             var icoPath = record.Type == ResultType.File ? "Images\\file.png" : "Images\\folder.png";
 
@@ -287,8 +286,10 @@ namespace Flow.Launcher.Plugin.Everything
                 var notepadPath = string.IsNullOrEmpty(_settings.EditorPath) ? "notepad.exe" : _settings.EditorPath;
                 contextMenus.Add(new Result
                 {
-                    Title = string.Format(_context.API.GetTranslation("flowlauncher_plugin_everything_open_with_editor"),
-                        Path.GetFileNameWithoutExtension(notepadPath)),
+                    Title = string.Format(
+                        _context.API.GetTranslation("flowlauncher_plugin_everything_open_with_editor"),
+                        Path.GetFileNameWithoutExtension(notepadPath)
+                    ),
                     Action = state =>
                     {
                         using var notepad = new Process();
