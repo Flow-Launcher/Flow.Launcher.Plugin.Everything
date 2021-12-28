@@ -25,5 +25,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Flow.Launcher.Plugin.Everything
-        path: Output/Release/
+        path: Output/Release/Flow.Launcher.Plugin.Everything
 
