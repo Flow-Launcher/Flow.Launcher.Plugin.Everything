@@ -12,7 +12,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Markup.Localizer;
 
 namespace Flow.Launcher.Plugin.Everything
 {
