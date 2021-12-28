@@ -263,7 +263,8 @@ namespace Flow.Launcher.Plugin.Everything
         public List<Result> LoadContextMenus(Result selectedResult)
         {
             if (selectedResult.ContextData is not SearchResult record)
-                return new List<Result>();
+                if (selectedResult.ContextData is not SearchResult record)
+                    return new List<Result>();
 
             var icoPath = record.Type == ResultType.File ? "Images\\file.png" : "Images\\folder.png";
 
@@ -358,7 +359,7 @@ namespace Flow.Launcher.Plugin.Everything
                         return true;
                     },
                     IcoPath = icoPath,
-                    Glyph = new ("/Resources/#Segoe Fluent Icons","\ue74d")
+                    Glyph = new("/Resources/#Segoe Fluent Icons", "\ue74d")
                 });
             return contextMenus;
         }
