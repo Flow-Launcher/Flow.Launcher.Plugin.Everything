@@ -57,8 +57,14 @@ namespace Flow.Launcher.Plugin.Everything
                         IcoPath = "Images\\warning.png",
                         Action = _ =>
                         {
-                            if (FilesFolders.FileExists(_settings.EverythingInstalledPath))
-                                FilesFolders.OpenPath(_settings.EverythingInstalledPath);
+                            if (_settings.EverythingInstalledPath.FileExists())
+                            {
+                                Process.Start(new ProcessStartInfo
+                                {
+                                    FileName = _settings.EverythingInstalledPath,
+                                    Arguments = $"{(_settings.LaunchHidden ? "-startup" : "")}"
+                                })?.Dispose();
+                            }
 
                             return true;
                         }
@@ -138,34 +144,6 @@ namespace Flow.Launcher.Plugin.Everything
                 SubTitleHighlightData = _context.API.FuzzySearch(keyword, path).MatchData
             };
             return r;
-        }
-
-        private List<ContextMenu> GetDefaultContextMenu()
-        {
-            List<ContextMenu> defaultContextMenus = new List<ContextMenu>();
-            ContextMenu openFolderContextMenu = new ContextMenu
-            {
-                Name = _context.API.GetTranslation("flowlauncher_plugin_everything_open_containing_folder"),
-                Command = _settings.ExplorerPath,
-                Argument = $"{_settings.ExplorerArgs}",
-                ImagePath = "Images\\folder.png"
-            };
-
-            defaultContextMenus.Add(openFolderContextMenu);
-
-            string editorPath = string.IsNullOrEmpty(_settings.EditorPath) ? "notepad.exe" : _settings.EditorPath;
-
-            ContextMenu openWithEditorContextMenu = new ContextMenu
-            {
-                Name = string.Format(_context.API.GetTranslation("flowlauncher_plugin_everything_open_with_editor"), Path.GetFileNameWithoutExtension(editorPath)),
-                Command = editorPath,
-                Argument = $" {Settings.FilePathPlaceHolder}",
-                ImagePath = editorPath
-            };
-
-            defaultContextMenus.Add(openWithEditorContextMenu);
-
-            return defaultContextMenus;
         }
 
         public void Init(PluginInitContext context)
