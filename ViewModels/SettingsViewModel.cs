@@ -24,7 +24,7 @@ namespace Flow.Launcher.Plugin.Everything.ViewModels
             {
                 try
                 {
-                    return api.IsFastSortOption(settings.SortOption) ? Visibility.Hidden : Visibility.Visible;
+                    return api.IsFastSortOption(settings.SortOption) ? Visibility.Collapsed : Visibility.Visible;
                 }
                 catch (IPCErrorException)
                 {
