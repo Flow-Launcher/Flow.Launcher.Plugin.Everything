@@ -19,4 +19,6 @@
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Programın çalışma klasörü olarak sonuç klasörünü kullan</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Fırlatma gizli</system:String>
+
+    <system:String x:Key="flowlauncher_plugin_everything_show_shell_context_menu">Show context menu</system:String>
 </ResourceDictionary>

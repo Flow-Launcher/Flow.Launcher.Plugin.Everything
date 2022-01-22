@@ -45,6 +45,18 @@ namespace Flow.Launcher.Plugin.Everything
                 settings.LaunchHidden = false;
             };
 
+            ShowShellContextMenu.IsChecked = settings.ShowShellContextMenu;
+
+            ShowShellContextMenu.Checked += (o, e) =>
+            {
+	            settings.ShowShellContextMenu = true;
+            };
+
+            ShowShellContextMenu.Unchecked += (o, e) =>
+            {
+	            settings.ShowShellContextMenu = false;
+            };
+
             EditorPath.Content = settings.EditorPath;
         }
 

@@ -42,6 +42,8 @@ namespace Flow.Launcher.Plugin.Everything
 
         public bool LaunchHidden { get; set; } = false;
 
+        public bool ShowShellContextMenu { get; set; } = true;
+
         public string EverythingInstalledPath { get; set; }
 
         public SortOption[] SortOptions { get; set; } = Enum.GetValues<SortOption>().Cast<SortOption>().ToArray();

@@ -323,6 +323,30 @@ namespace Flow.Launcher.Plugin.Everything
             }
 
             var icoPath = (record.Type == ResultType.File) ? "Images\\file.png" : "Images\\folder.png";
+
+            if (_settings.ShowShellContextMenu)
+            {
+	            contextMenus.Add(new Result
+	            {
+		            Title = _context.API.GetTranslation("flowlauncher_plugin_everything_show_shell_context_menu"),
+		            Action = (context) =>
+		            {
+			            var fileInfos = new FileInfo[] { new(record.FullPath) };
+
+			            var showPosition = new System.Drawing.Point
+			            (
+				            System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width / 2,
+				            System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height / 2
+			            );
+
+			            new Peter.ShellContextMenu().ShowContextMenu(fileInfos, showPosition);
+
+			            return true;
+		            },
+		            IcoPath = icoPath
+	            });
+            }
+
             contextMenus.Add(new Result
             {
                 Title = _context.API.GetTranslation("flowlauncher_plugin_everything_copy_path"),

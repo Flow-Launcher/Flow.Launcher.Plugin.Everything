@@ -13,4 +13,6 @@
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Szukaj w plikach na dysku używając programu Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Uruchomienie ukryty</system:String>    
+
+    <system:String x:Key="flowlauncher_plugin_everything_show_shell_context_menu">Show context menu</system:String>
 </ResourceDictionary>
