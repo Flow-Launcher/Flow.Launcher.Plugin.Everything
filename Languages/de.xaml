@@ -15,6 +15,4 @@
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Verwenden Suchergebnis Standort als ausführbare Arbeitsverzeichnis</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Starten Sie versteckt</system:String>
-
-    <system:String x:Key="flowlauncher_plugin_everything_show_shell_context_menu">Show context menu</system:String>
 </ResourceDictionary>

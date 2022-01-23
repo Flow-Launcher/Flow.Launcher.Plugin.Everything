@@ -19,6 +19,4 @@
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">使用应用程序的位置为可执行的工作目录</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">启动隐藏</system:String>
-
-    <system:String x:Key="flowlauncher_plugin_everything_show_shell_context_menu">Show context menu</system:String>
 </ResourceDictionary>
