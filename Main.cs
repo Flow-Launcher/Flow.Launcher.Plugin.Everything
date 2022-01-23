@@ -333,11 +333,10 @@ namespace Flow.Launcher.Plugin.Everything
 		            {
 			            var fileInfos = new FileInfo[] { new(record.FullPath) };
 
-			            var showPosition = new System.Drawing.Point
-			            (
-				            System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Width / 2,
-				            System.Windows.Forms.Screen.PrimaryScreen.WorkingArea.Height / 2
-			            );
+			            var screenWithMouseCursor = System.Windows.Forms.Screen.FromPoint(System.Windows.Forms.Cursor.Position);
+			            var xOfScreenCenter = screenWithMouseCursor.WorkingArea.Left + screenWithMouseCursor.WorkingArea.Width / 2;
+			            var yOfScreenCenter = screenWithMouseCursor.WorkingArea.Top + screenWithMouseCursor.WorkingArea.Height / 2;
+			            var showPosition = new System.Drawing.Point(xOfScreenCenter, yOfScreenCenter);
 
 			            new Peter.ShellContextMenu().ShowContextMenu(fileInfos, showPosition);
 
