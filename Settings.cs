@@ -42,7 +42,7 @@ namespace Flow.Launcher.Plugin.Everything
 
         public bool LaunchHidden { get; set; } = false;
 
-        public bool ShowShellContextMenu { get; set; } = true;
+        public bool ShowWindowsContextMenu { get; set; } = true;
 
         public string EverythingInstalledPath { get; set; }
 

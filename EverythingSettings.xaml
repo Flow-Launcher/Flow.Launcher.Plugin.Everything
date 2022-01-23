@@ -42,12 +42,12 @@
             Content="{DynamicResource flowlauncher_plugin_everything_launch_hidden}" />
 
         <CheckBox
-            x:Name="ShowShellContextMenu"
+            x:Name="ShowWindowsContextMenu"
             Grid.Row="2"
             Grid.ColumnSpan="3"
             Margin="10,6,18,6"
             HorizontalAlignment="Left"
-            Content="{DynamicResource flowlauncher_plugin_everything_show_shell_context_menu}" />
+            Content="{DynamicResource flowlauncher_plugin_everything_show_windows_context_menu}" />
 
         <Label
             Grid.Row="3"

@@ -324,11 +324,11 @@ namespace Flow.Launcher.Plugin.Everything
 
             var icoPath = (record.Type == ResultType.File) ? "Images\\file.png" : "Images\\folder.png";
 
-            if (_settings.ShowShellContextMenu)
+            if (_settings.ShowWindowsContextMenu)
             {
 	            contextMenus.Add(new Result
 	            {
-		            Title = _context.API.GetTranslation("flowlauncher_plugin_everything_show_shell_context_menu"),
+		            Title = _context.API.GetTranslation("flowlauncher_plugin_everything_show_windows_context_menu"),
 		            Action = (context) =>
 		            {
 			            var fileInfos = new FileInfo[] { new(record.FullPath) };
