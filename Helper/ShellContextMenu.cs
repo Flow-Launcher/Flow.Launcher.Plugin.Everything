@@ -9,6 +9,7 @@ using System.Security.Permissions;
 
 namespace Peter
 {
+    //  Code from https://www.codeproject.com/Articles/22012/Explorer-Shell-Context-Menu:
     /// <summary>
     /// "Stand-alone" shell context menu
     /// 
