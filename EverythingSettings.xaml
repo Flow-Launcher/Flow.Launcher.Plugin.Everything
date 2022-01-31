@@ -85,6 +85,7 @@
             ItemsSource="{Binding GetSortOptions, Mode=OneWay}"
             SelectedItem="{Binding SortOption}"
             SelectionChanged="onSelectionChange">
+                  ItemsSource="{Binding GetSortOptions, Mode=OneWay}"
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
