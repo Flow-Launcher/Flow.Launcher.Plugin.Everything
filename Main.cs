@@ -58,13 +58,7 @@ namespace Flow.Launcher.Plugin.Everything
                         Action = _ =>
                         {
                             if (_settings.EverythingInstalledPath.FileExists())
-                            {
-                                Process.Start(new ProcessStartInfo
-                                {
-                                    FileName = _settings.EverythingInstalledPath,
-                                    Arguments = $"{(_settings.LaunchHidden ? "-startup" : "")}"
-                                })?.Dispose();
-                            }
+                                _context.API.OpenDirectory(_settings.EverythingInstalledPath);
 
                             return true;
                         }
@@ -113,7 +107,27 @@ namespace Flow.Launcher.Plugin.Everything
                         switch (searchResult.Type)
                         {
                             case ResultType.Folder:
-                                _context.API.OpenDirectory(path);
+                                if (!_settings.LaunchHidden)
+                                {
+                                    _context.API.OpenDirectory(path);
+                                }
+                                else
+                                {
+                                    // Launch hidden is no longer supported due to API change.
+                                    // This the default behaviour kept 
+                                    ProcessStartInfo startInfo = new ProcessStartInfo();
+                                    //Hide the process
+                                    startInfo.UseShellExecute = false;
+                                    startInfo.RedirectStandardOutput = true;
+                                    startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                                    startInfo.CreateNoWindow = true;
+                                    //Set file and args
+                                    startInfo.FileName = "explorer";
+                                    startInfo.Arguments = $"\"{path}\"";
+                                    //Start the process
+                                    Process proc = Process.Start(startInfo);
+                                }
+
                                 break;
                             case ResultType.Volume:
                             case ResultType.File:
