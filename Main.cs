@@ -301,6 +301,28 @@ namespace Flow.Launcher.Plugin.Everything
                 });
             }
 
+            if (_settings.ShowWindowsContextMenu)
+            {
+                contextMenus.Add(new Result
+                {
+                    Title = _context.API.GetTranslation("flowlauncher_plugin_everything_show_windows_context_menu"),
+                    Action = (context) =>
+                    {
+                        var fileInfos = new FileInfo[] { new(record.FullPath) };
+
+                        var screenWithMouseCursor = System.Windows.Forms.Screen.FromPoint(System.Windows.Forms.Cursor.Position);
+                        var xOfScreenCenter = screenWithMouseCursor.WorkingArea.Left + screenWithMouseCursor.WorkingArea.Width / 2;
+                        var yOfScreenCenter = screenWithMouseCursor.WorkingArea.Top + screenWithMouseCursor.WorkingArea.Height / 2;
+                        var showPosition = new System.Drawing.Point(xOfScreenCenter, yOfScreenCenter);
+
+                        new Peter.ShellContextMenu().ShowContextMenu(fileInfos, showPosition);
+
+                        return true;
+                    },
+                    IcoPath = icoPath
+                });
+            }
+
             contextMenus.Add(
                 new()
                 {
