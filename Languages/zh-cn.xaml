@@ -20,36 +20,36 @@
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">启动隐藏</system:String>
     
 
-    <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">You can customize the opening of the containing folder by inputing the Environmental Variable or the Absolute Path of the File Explorer you want to use. It will be useful to use CMD to test whether the it is available.</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">您可以通过输入环境变量或绝对路径来自定义包含的文件夹的打开。利用 CMD 来测试可用性是有帮助的。</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_title">自定义资源管理器</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_args">参数</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_tooltip">Enter the customized args you want to add for customized explorer. %s represent directory path (parent directory for file or directory itself). %f represent file path (only work for file).</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_textbox">%s represent directory path (parent directory for file or directory itself). %f represent file path (only work for file).</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_customized_args_tooltip">输入您想要为自定义的文件资源管理器添加的自定义参数。%s 代表目录路径（目录本身或文件的父目录)。%f 代表文件路径（仅适用于文件）。</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_customized_args_textbox">%s 代表目录路径（目录本身或文件的父目录）。%f 代表文件路径（仅适用于文件）。</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by">Sort By</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by">排序依据</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">名称</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Path</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">路径</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_size">大小</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">Extension</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">Type Name</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Date Created</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Date Modified</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Attributes</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">File List FileName</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Run Count</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Date Recently Changed</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Date Accessed</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Date Run</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">扩展名</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">类型名称</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">创建日期</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">修改日期</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">属性</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">文件列表名</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">运行次数</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">最近更改日期</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">访问日期</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">运行日期</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Warning: This is not a Fast Sort option, searches may be slow</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">警告：这不是一个快速排序选项，搜索可能较慢。</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything Installation</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Installing Everything service. Please wait...</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Successfully installed Everything service</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Failed to automatically install Everything service. Please manually install it from https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_run_service">Click here to start it</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installing_select">Unable to find an Everything installation, would you like to manually select a location?{0}{0}Click no and Everything will be automatically installed for you</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything 安装</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">正在安装 Everything 服务。请稍后...</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">成功安装了 Everything 服务</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">自动安装 Everything 服务失败。请从 https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe 手动安装。</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_run_service">单击此处开始</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_select">无法找到任何 Everything 安装，您想手动选择一个位置吗？{0}{0} 单击 不 将自动为您安装 Everything。</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_show_windows_context_menu">Show context menu</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_show_windows_context_menu">显示上下文菜单</system:String>
 </ResourceDictionary>
