@@ -1,4 +1,4 @@
-﻿<UserControl
+<UserControl
     x:Class="Flow.Launcher.Plugin.Everything.EverythingSettings"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -19,8 +19,8 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition />
-            <ColumnDefinition Width="2*" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.Resources>
@@ -33,6 +33,7 @@
             Margin="10,6,18,6"
             HorizontalAlignment="Left"
             Content="{DynamicResource flowlauncher_plugin_everything_use_location_as_working_dir}" />
+
         <CheckBox
             x:Name="LaunchHidden"
             Grid.Row="1"
@@ -55,22 +56,25 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
             Content="{DynamicResource flowlauncher_plugin_everything_editor_path}" />
+
+        <Button
+            x:Name="OpenEditorPath"
+            Grid.Row="3"
+            Grid.Column="1"
+            MinWidth="50"
+            HorizontalAlignment="Left"
+            Click="EditorPath_Clicked"
+            Content="..." />
+
         <Label
             x:Name="EditorPath"
             Grid.Row="3"
             Grid.Column="1"
-            Margin="10"
+            Margin="70 0 0 0"
+            Grid.ColumnSpan="2"
             HorizontalAlignment="Left"
             VerticalAlignment="Center" />
-        <Button
-            x:Name="OpenEditorPath"
-            Grid.Row="3"
-            Grid.Column="2"
-            MinWidth="80"
-            Margin="10"
-            HorizontalAlignment="Left"
-            Click="EditorPath_Clicked"
-            Content="..." />
+
         <TextBlock
             Grid.Row="4"
             Margin="10"
@@ -81,11 +85,10 @@
             Grid.Row="4"
             Grid.Column="1"
             Width="200"
-            Margin="10"
+            VerticalAlignment="Center"
             ItemsSource="{Binding GetSortOptions, Mode=OneWay}"
             SelectedItem="{Binding SortOption}"
             SelectionChanged="onSelectionChange">
-                  ItemsSource="{Binding GetSortOptions, Mode=OneWay}"
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -98,9 +101,9 @@
         <TextBlock
             Name="tbFastSortWarning"
             Grid.Row="4"
-            Grid.Column="0"
+            Grid.Column="2"
             Grid.ColumnSpan="3"
-            Margin="10,20,10,20"
+            Margin="0 0 10 0"
             VerticalAlignment="Center"
             Foreground="Orange"
             Text="{Binding GetSortOptionWarningMessage}"
