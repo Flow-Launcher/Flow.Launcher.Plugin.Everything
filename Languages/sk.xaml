@@ -1,10 +1,9 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+﻿<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <system:String x:Key="flowlauncher_plugin_everything_is_not_running">Upozornenie: Služba Everything nie je spustená</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_query_error">Chyba pri dopytovaní Everything</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_copied">Skopírované</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_copied">Skopírovan</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">{0} sa nedá spustiť</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Otvoriť umiestnenie súboru</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Otvoriť v {0}</system:String>
@@ -18,9 +17,9 @@
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Vyhľadávanie súborov cez Everything</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Použiť cestu výsledku vyhľadávania ako pracovný priečinok spustiteľného súboru</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Spustiť skryté</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Spustiť skryt</system:String>
     
-    
+
     <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">Na otváranie priečinka súborov môžete použiť vlastného správcu súborov vložením premennej prostredia, alebo absolútnej cesty k správcovi, ktorý chcete použiť. Na otestovanie môžete použiť príkazový riadok.</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_title">Vlastný správca súborov</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_customized_args">Arg.</system:String>
@@ -41,14 +40,16 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Nedávo zmenený dátum</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Dátum prístupu</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Dátum spustenia</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Upozornenie: Toto nie je voľba Fast Sort, vyhľadávanie môže byť pomalé</system:String>
-    
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Upozornenie: Toto nie je voľba Fast Sort, vyhľadávanie môže byť pomal</system:String>
+
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Inštalácia Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Inštaluje sa služba Everything. Čakajte, prosím…</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Služba Everything bola úspešne nainštalovaná</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Automatická inštalácia služby Everything zlyhala. Prosím, naintašalujte ju manuálne z https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_run_service">Kliknutím sem ju spustíte</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_select">Nepodarilo sa nájsť inštaláciu Everything, chcete manuálne vybrať jej umiestnenie?{0}{0}Kliknutím na nie sa Everything automaticky nainštaluje</system:String>
+
+    <system:String x:Key="flowlauncher_plugin_everything_show_windows_context_menu">Show context menu</system:String>
 </ResourceDictionary>
