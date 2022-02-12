@@ -18,4 +18,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore -c Release
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Flow.Launcher.Plugin.Everything.zip
+        path: Output/Release/Flow.Launcher.Plugin.Everything
 
