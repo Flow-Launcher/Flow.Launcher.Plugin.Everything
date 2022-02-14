@@ -12,20 +12,13 @@
     <system:String x:Key="flowlauncher_plugin_everything_copy">Copy</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">Supprimer</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">Can't delete {0}</system:String>
-    
+
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Search on-disk files using Everything</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Use search result's location as executable working directory</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Launch hidden</system:String>
     
-
-    <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">You can customize the opening of the containing folder by inputing the Environmental Variable or the Absolute Path of the File Explorer you want to use. It will be useful to use CMD to test whether the it is available.</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_title">Customized Explorer</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args">Args</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_tooltip">Enter the customized args you want to add for customized explorer. %s represent directory path (parent directory for file or directory itself). %f represent file path (only work for file).</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_textbox">%s represent directory path (parent directory for file or directory itself). %f represent file path (only work for file).</system:String>
-
     <system:String x:Key="flowlauncher_plugin_everything_sort_by">Sort By</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Name</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Path</system:String>
