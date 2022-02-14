@@ -12,20 +12,13 @@
     <system:String x:Key="flowlauncher_plugin_everything_copy">拷贝</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">删除</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">无法删除 {0}</system:String>
-    
+
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">利用 Everything 搜索磁盘文件</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">使用应用程序的位置为可执行的工作目录</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">启动隐藏</system:String>
     
-
-    <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">您可以通过输入环境变量或绝对路径来自定义包含的文件夹的打开。利用 CMD 来测试可用性是有帮助的。</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_title">自定义资源管理器</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args">参数</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_tooltip">输入您想要为自定义的文件资源管理器添加的自定义参数。%s 代表目录路径（目录本身或文件的父目录)。%f 代表文件路径（仅适用于文件）。</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_textbox">%s 代表目录路径（目录本身或文件的父目录）。%f 代表文件路径（仅适用于文件）。</system:String>
-
     <system:String x:Key="flowlauncher_plugin_everything_sort_by">排序依据</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">名称</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">路径</system:String>
