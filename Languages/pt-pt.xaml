@@ -12,20 +12,13 @@
     <system:String x:Key="flowlauncher_plugin_everything_copy">Copiar</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">Eliminar</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">Não foi possível eliminar {0}</system:String>
-    
+
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Pesquisar ficheiros com Everything</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Utilizar local dos resultados como diretório de trabalho executável</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Iniciar oculto</system:String>
     
-
-    <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">You can customize the opening of the containing folder by inputing the Environmental Variable or the Absolute Path of the File Explorer you want to use. It will be useful to use CMD to test whether the it is available.</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_title">Explorador personalizado</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args">Argumentos</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_tooltip">Indique os argumentos personalizados que pretende adicionar o o gestor de ficheiros personalizado. %s representa o caminho do diretório (o diretório em que o ficheiro está ou o diretório por si). %f representa o caminho do ficheiro (apenas funciona para ficheiros).</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_textbox">%s representa o caminho do diretório (o diretório em que o ficheiro está ou o diretório por si). %f representa o caminho do ficheiro (apenas funciona para ficheiros).</system:String>
-
     <system:String x:Key="flowlauncher_plugin_everything_sort_by">Ordenar por</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Nome</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Caminho</system:String>
