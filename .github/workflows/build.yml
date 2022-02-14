@@ -2,9 +2,6 @@ name: Build
 
 on:
   push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
 
 jobs:
   build:
@@ -24,6 +21,6 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: Flow.Launcher.Plugin.Everything
+        name: Flow.Launcher.Plugin.Everything.zip
         path: Output/Release/Flow.Launcher.Plugin.Everything
 
