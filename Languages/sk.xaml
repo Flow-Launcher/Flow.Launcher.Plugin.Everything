@@ -12,20 +12,13 @@
     <system:String x:Key="flowlauncher_plugin_everything_copy">Kopírovať</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">Odstrániť</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">{0} sa nedá odstrániť</system:String>
-    
+
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Vyhľadávanie súborov na disku cez Everything</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Použiť cestu výsledku vyhľadávania ako pracovný priečinok spustiteľného súboru</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Spustiť skryté</system:String>
     
-
-    <system:String x:Key="flowlauncher_plugin_everything_customized_tooltip">Na otváranie priečinka súborov môžete použiť vlastného správcu súborov vložením premennej prostredia, alebo absolútnej cesty k správcovi, ktorého chcete použiť. Na otestovanie môžete použiť príkazový riadok.</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_title">Vlastný správca súborov</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args">Arg.</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_tooltip">Zadajte vlastné argumenty, ktoré chcete pridať do vlastného správcu súborov. %s predstavuje cestu k priečinku (rodičovský priečinok pre súbor alebo samotný priečinok). %f predstavuje cestu k súboru (funguje len pre súbor).</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_customized_args_textbox">%s predstavuje cestu k priečinku (rodičovský priečinok pre súbor alebo samotný priečinok). %f predstavuje cestu k súboru (funguje len pre súbor).</system:String>
-
     <system:String x:Key="flowlauncher_plugin_everything_sort_by">Zoradiť podľa</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Názov</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Cesta</system:String>
