@@ -16,33 +16,33 @@
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Buscar archivos en disco usando Everything</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Use search result's location as executable working directory</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Launch hidden</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Usar la ubicación del resultado de búsqueda como lugar de lanzamiento del ejecutable</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Iniciar oculto</system:String>
     
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by">Sort By</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Name</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Path</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_size">Size</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">Extension</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">Type Name</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Date Created</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Date Modified</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Attributes</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">File List FileName</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Run Count</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Date Recently Changed</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Date Accessed</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Date Run</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by">Ordenar por</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Nombre</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Ruta</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_size">Tamaño</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">Extensión</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">Tipo</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Fecha de creación</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Fecha de modificación</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Atributos</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">Nombre de la lista de archivos</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Conteo de ejecución</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Fecha de cambios recientes</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Fecha de último acceso</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Fecha de ejecución</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Warning: This is not a Fast Sort option, searches may be slow</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Advertencia: Esta no es una opción de ordenación rápida, las búsquedas pueden ser lentas</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything Installation</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Installing Everything service. Please wait...</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Successfully installed Everything service</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Failed to automatically install Everything service. Please manually install it from https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_run_service">Click here to start it</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installing_select">Unable to find an Everything installation, would you like to manually select a location?{0}{0}Click no and Everything will be automatically installed for you</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_title">Instalación de Everything</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Instalando el servicio de Everything. Por favor, espere...</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Servicio de Everything instalado correctamente</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Error al instalar el servicio de Everything de forma automática. Por favor, instálelo manualmente desde https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_run_service">Haga clic aquí para iniciarlo</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_select">No se ha podido encontrar una instalación de Everything, ¿quieres seleccionar manualmente una ubicación?{0}{0}Si haces click en no y Everything se instalará automáticamente</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_show_windows_context_menu">Show context menu</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_show_windows_context_menu">Mostrar menú contextual</system:String>
 </ResourceDictionary>
