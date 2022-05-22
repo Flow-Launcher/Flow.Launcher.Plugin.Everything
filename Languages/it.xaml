@@ -2,30 +2,30 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <system:String x:Key="flowlauncher_plugin_everything_is_not_running">Attenzione: Il servizio &quot;Everything&quot; non è in esecuzione</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_query_error">Error while querying Everything</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_query_error">Errore nell'interrogazione di Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copied">Copiato</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_canot_start">Can’t start {0}</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Open parent folder</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Open with {0}</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_canot_start">Impossibile avviare {0}</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Apri la cartella padre</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Apri con {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">Editor Path</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_copy_path">Copy path</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_copy">Copy</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_copy_path">Copia percorso</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_copy">Copia</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">Cancella</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_canot_delete">Can't delete {0}</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_canot_delete">Impossibile eliminare {0}</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Search on-disk files using Everything</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Cerca file sul disco utilizzando Everything</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Use search result's location as executable working directory</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Launch hidden</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Utilizza il percorso ottenuto dalla ricerca come cartella di lavoro</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Avvia nascosto</system:String>
     
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by">Sort By</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Name</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Path</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by">Ordina per</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Nome</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Percorso</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_size">Dimensioni</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">Extension</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">Type Name</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Date Created</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">Estensione</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">Tipo</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Data di creazione</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Date Modified</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Attributes</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">File List FileName</system:String>
@@ -37,12 +37,12 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
     <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Warning: This is not a Fast Sort option, searches may be slow</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything Installation</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Installing Everything service. Please wait...</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Successfully installed Everything service</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Failed to automatically install Everything service. Please manually install it from https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_run_service">Click here to start it</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installing_select">Unable to find an Everything installation, would you like to manually select a location?{0}{0}Click no and Everything will be automatically installed for you</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_title">Installazione di Everything</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Installazione di everything. Si prega di attendere...</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Everything è stato installato con successo</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Impossibile installare automaticamente il servizio Everything. Si prega di installarlo manualmente da https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_run_service">Premi per avviare</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_select">Impossibile trovare l'installazione di Everything, vuoi inserire manualmente un percorso? {0} {0} Premi no per installare automaticamente Everything</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_show_windows_context_menu">Show context menu</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_show_windows_context_menu">Mostra il menù di scelta rapida</system:String>
 </ResourceDictionary>
