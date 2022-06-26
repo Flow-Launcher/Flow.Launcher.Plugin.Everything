@@ -8,10 +8,10 @@
     <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">開啟檔案位置</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">利用{0}啟動</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">編輯器路</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_copy_path">Copy path</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_copy">Copy</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_copy_path">複製路徑</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_copy">複製</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">刪除</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_canot_delete">Can't delete {0}</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_canot_delete">無法刪除 {0}</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">利用 Everything 搜尋磁碟上的檔</system:String>
@@ -19,15 +19,15 @@
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">使用程式所在目錄作為工作目</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">啟動隱藏</system:String>
     
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by">Sort By</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Name</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Path</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by">排序依據</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">名稱</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">路徑</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_size">大小</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">Extension</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">Type Name</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Date Created</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Date Modified</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Attributes</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">類型</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">創建日期</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">修改日期</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">屬性</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">File List FileName</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Run Count</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Date Recently Changed</system:String>
