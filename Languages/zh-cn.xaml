@@ -6,7 +6,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_copied">拷贝成</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">不能启动 {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">打开所属文件夹</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">使用{0}打</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">使用 {0} 打开</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">编辑器路</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy_path">拷贝路</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy">拷贝</system:String>
