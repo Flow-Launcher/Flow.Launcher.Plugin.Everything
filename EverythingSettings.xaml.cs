@@ -45,9 +45,19 @@ namespace Flow.Launcher.Plugin.Everything
                 settings.LaunchHidden = false;
             };
 
+            ShowWindowsContextMenu.IsChecked = settings.ShowWindowsContextMenu;
+
+            ShowWindowsContextMenu.Checked += (o, e) =>
+            {
+	            settings.ShowWindowsContextMenu = true;
+            };
+
+            ShowWindowsContextMenu.Unchecked += (o, e) =>
+            {
+	            settings.ShowWindowsContextMenu = false;
+            };
+
             EditorPath.Content = settings.EditorPath;
-            CustomizeExplorerBox.Text = settings.ExplorerPath;
-            CustomizeArgsBox.Text = settings.ExplorerArgs;
         }
 
         private void EditorPath_Clicked(object sender, RoutedEventArgs e)
@@ -65,15 +75,6 @@ namespace Flow.Launcher.Plugin.Everything
             EditorPath.Content = settings.EditorPath;
         }
 
-        private void CustomizeExplorer(object sender, TextChangedEventArgs e)
-        {
-            settings.ExplorerPath = CustomizeExplorerBox.Text;
-        }
-
-        private void CustomizeExplorerArgs(object sender, TextChangedEventArgs e)
-        {
-            settings.ExplorerArgs = CustomizeArgsBox.Text;
-        }
 
         private void onSelectionChange(object sender, SelectionChangedEventArgs e)
         {
