@@ -14,7 +14,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">No se puede eliminar {0}</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Buscar archivos en disco usando Everything</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Busca archivos en disco usando Everything</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Usar la ubicación del resultado de búsqueda como lugar de lanzamiento del ejecutable</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">Iniciar oculto</system:String>
