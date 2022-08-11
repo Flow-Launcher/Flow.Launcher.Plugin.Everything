@@ -5,7 +5,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_query_error">Error al consultar Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copied">Copiado</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">No se puede iniciar {0}</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Abrir carpeta padre</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Abrir carpeta principal</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Abrir con {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">Ruta del editor</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy_path">Copiar ruta</system:String>
