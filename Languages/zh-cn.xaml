@@ -8,7 +8,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">打开所属文件夹</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">使用 {0} 打开</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">编辑器路</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_copy_path">拷贝路</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_copy_path">拷贝路径</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy">拷贝</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">删除</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">无法删除 {0}</system:String>
