@@ -2,7 +2,7 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <system:String x:Key="flowlauncher_plugin_everything_is_not_running">Everything Service 尚未啟動</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_query_error">Everything 套件發生錯誤（Enter 複製具體錯誤訊息</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_query_error">Everything 套件發生錯誤（Enter 複製具體錯誤訊息）</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copied">複製成</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">無法啟動 {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">開啟檔案位置</system:String>
@@ -14,9 +14,9 @@
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">無法刪除 {0}</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_plugin_description">利用 Everything 搜尋磁碟上的檔</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_plugin_description">利用 Everything 搜尋磁碟上的檔案</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">使用程式所在目錄作為工作目</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">使用程式所在目錄作為工作目錄</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_launch_hidden">啟動隱藏</system:String>
     
     <system:String x:Key="flowlauncher_plugin_everything_sort_by">排序依據</system:String>
@@ -39,7 +39,7 @@
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything 安裝程序</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">正在安裝 Everything 服務，請稍後...</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">成功安裝 Everything服務</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">成功安裝 Everything 服務</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">無法自動安裝 Everything 服務，請自行至 https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe 安裝</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_run_service">點此開始</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_select">Unable to find an Everything installation, would you like to manually select a location?{0}{0}Click no and Everything will be automatically installed for you</system:String>
