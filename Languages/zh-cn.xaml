@@ -33,8 +33,8 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">最近更改日期</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">访问日期</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">运行日期</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">警告：这不是一个快速排序选项，搜索可能较慢。</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything 安装</system:String>
