@@ -33,8 +33,8 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Nedávo zmenený dátum</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Dátum prístupu</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Dátum spustenia</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Upozornenie: Toto nie je voľba Fast Sort, vyhľadávanie môže byť pomalé</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Inštalácia Everything</system:String>
