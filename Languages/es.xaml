@@ -29,7 +29,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Fecha de modificación</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Atributos</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">Nombre de la lista de archivos</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Conteo de ejecución</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Número de ejecuciones</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Fecha de cambios recientes</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Fecha de último acceso</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Fecha de ejecución</system:String>
