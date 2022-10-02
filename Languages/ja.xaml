@@ -22,7 +22,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by">Sort By</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_name">Name</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_path">Path</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_size">サイズ</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_size"></system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">Extension</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">Type Name</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Date Created</system:String>
