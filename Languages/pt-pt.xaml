@@ -33,8 +33,8 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Data alterada recentemente</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Data de acesso</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Data de execução</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Aviso: esta não é uma opção de ordenação rápida e as pesquisas podem ser demoradas</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Instalação de Everything</system:String>
