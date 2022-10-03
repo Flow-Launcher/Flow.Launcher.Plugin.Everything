@@ -30,7 +30,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Atribúty</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">Zoznam názvov súborov</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Počet spustení</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Nedávo zmenený dátum</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Nedávno zmenený dátum</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Dátum prístupu</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Dátum spustenia</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
