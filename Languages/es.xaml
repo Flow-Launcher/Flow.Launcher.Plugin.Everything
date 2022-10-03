@@ -5,7 +5,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_query_error">Error al consultar Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copied">Copiado</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">No se puede iniciar {0}</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Abrir carpeta principal</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Abrir carpeta contenedora</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Abrir con {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">Ruta del editor</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy_path">Copiar ruta</system:String>
@@ -35,7 +35,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Fecha de ejecución</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Advertencia: Esta no es una opción de ordenación rápida, las búsquedas pueden ser lentas</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Advertencia: Esta no es una opción de clasificación rápida, las búsquedas pueden ser lentas</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Instalación de Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Instalando el servicio de Everything. Por favor, espere...</system:String>
