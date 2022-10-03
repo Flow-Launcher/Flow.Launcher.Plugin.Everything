@@ -7,13 +7,13 @@
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">Impossibile avviare {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Apri la cartella padre</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Apri con {0}</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_editor_path">Editor Path</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_editor_path">Tasto di accesso rapido alla finestra</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy_path">Copia percorso</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy">Copia</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">Cancella</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">Impossibile eliminare {0}</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Everything</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_plugin_name">Tutto</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_plugin_description">Cerca file sul disco utilizzando Everything</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_use_location_as_working_dir">Utilizza il percorso ottenuto dalla ricerca come cartella di lavoro</system:String>
@@ -26,16 +26,16 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_extension">Estensione</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_type_name">Tipo</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Data di creazione</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Date Modified</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Attributes</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">File List FileName</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Run Count</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Date Recently Changed</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Date Accessed</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Date Run</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Data della modifica</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Attributi</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">Nome File Lista</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Esegui Conteggio</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Data di recente della modifica</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Data di accesso</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Data di esecuzione</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Warning: This is not a Fast Sort option, searches may be slow</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Attenzione: Questa non è un'opzione di ordinamento rapido, le ricerche potrebbero essere lente</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Installazione di Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Installazione di everything. Si prega di attendere...</system:String>
