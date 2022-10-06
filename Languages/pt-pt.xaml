@@ -28,7 +28,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_created">Data de criação</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_modified">Data de modificação</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Atributos</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">File List FileName</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">Por nome na lista de ficheiros</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Contagem de execuções</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Data alterada recentemente</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Data de acesso</system:String>
@@ -37,10 +37,10 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Aviso: esta não é uma opção de ordenação rápida e as pesquisas podem ser demoradas</system:String>
 
-    <system:String x:Key="flowlauncher_plugin_everything_installing_title">Instalação de Everything</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installing_title">Instalação Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">A instalar o serviço Everything. Por favor aguarde...</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Serviço Everything instalado com sucesso</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Failed to automatically install Everything service. Please manually install it from https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Não foi possível instalar o serviço Everything. Descarregue a aplicação em https://www.voidtools.com e instale-a manualmente.</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_run_service">Clique aqui para iniciar</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_select">Não foi possível encontrar a instalação de Everything. Deseja especificar manualmente a localização?{0}{0}Clique Não e Everything será instalado automaticamente.</system:String>
 
