@@ -40,7 +40,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything 安裝程序</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">正在安裝 Everything 服務，請稍後...</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">成功安裝 Everything 服務</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">無法自動安裝 Everything 服務，請自行至 https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe 安裝</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Failed to automatically install Everything service. Please manually install it from https://www.voidtools.com</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_run_service">點此開始</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_select">Unable to find an Everything installation, would you like to manually select a location?{0}{0}Click no and Everything will be automatically installed for you</system:String>
 
