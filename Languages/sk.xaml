@@ -40,7 +40,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Inštalácia Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Inštaluje sa služba Everything. Čakajte, prosím…</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Služba Everything bola úspešne nainštalovaná</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Failed to automatically install Everything service. Please manually install it from https://www.voidtools.com</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Automatická inštalácia služby Everything zlyhala. Prosím, nainštalujte ju manuálne z https://www.voidtools.com</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_run_service">Kliknutím sem ju spustíte</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_select">Nepodarilo sa nájsť inštaláciu Everything, chcete manuálne vybrať jej umiestnenie?{0}{0}Kliknutím na nie sa Everything automaticky nainštaluje</system:String>
 
