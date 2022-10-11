@@ -5,7 +5,7 @@
     <system:String x:Key="flowlauncher_plugin_everything_query_error">Error al consultar Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copied">Copiado</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_start">No se puede iniciar {0}</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Abrir carpeta principal</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Abrir carpeta contenedora</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Abrir con {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">Ruta del editor</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_copy_path">Copiar ruta</system:String>
@@ -33,14 +33,14 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Fecha de cambios recientes</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Fecha de último acceso</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Fecha de ejecución</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Advertencia: Esta no es una opción de ordenación rápida, las búsquedas pueden ser lentas</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Advertencia: Esta no es una opción de clasificación rápida, las búsquedas pueden ser lentas</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Instalación de Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Instalando el servicio de Everything. Por favor, espere...</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Servicio de Everything instalado correctamente</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Error al instalar el servicio de Everything de forma automática. Por favor, instálelo manualmente desde https://www.voidtools.com</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">No se ha podido instalar automáticamente el servicio de Everything. Por favor, instálelo manualmente desde https://www.voidtools.com</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_run_service">Hacer clic aquí para iniciarlo</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_select">No se ha podido encontrar una instalación de Everything, ¿desea seleccionar manualmente una ubicación?{0}{0}Si hace click en no Everything se instalará automáticamente para usted</system:String>
 

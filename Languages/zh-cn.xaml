@@ -33,14 +33,14 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">最近更改日期</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">访问日期</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">运行日期</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">警告：这不是一个快速排序选项，搜索可能较慢。</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Everything 安装</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">正在安装 Everything 服务。请稍后...</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">成功安装了 Everything 服务</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">自动安装 Everything 服务失败。请从 https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe 手动安装。</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">自动安装 Everything 服务失败。请从 https://www.voidtools.com 手动下载并安装。</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_run_service">单击此处开始</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_select">无法找到任何 Everything 安装，您想手动选择一个位置吗？{0}{0} 单击 不 将自动为您安装 Everything。</system:String>
 

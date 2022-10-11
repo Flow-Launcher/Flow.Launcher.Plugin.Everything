@@ -30,17 +30,17 @@
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_attributes">Atribúty</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_file_list_filename">Zoznam názvov súborov</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_run_count">Počet spustení</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Nedávo zmenený dátum</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_recently_changed">Nedávno zmenený dátum</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_accessed">Dátum prístupu</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_sort_by_date_run">Dátum spustenia</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending"></system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending"></system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_ascending">↑</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_sort_by_descending">↓</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_nonfastsort_warning">Upozornenie: Toto nie je voľba Fast Sort, vyhľadávanie môže byť pomalé</system:String>
 
     <system:String x:Key="flowlauncher_plugin_everything_installing_title">Inštalácia Everything</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_subtitle">Inštaluje sa služba Everything. Čakajte, prosím…</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installationsuccess_subtitle">Služba Everything bola úspešne nainštalovaná</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Automatická inštalácia služby Everything zlyhala. Prosím, nainštalujte ju manuálne z https://www.voidtools.com/Everything-1.3.4.686.x64-Setup.exe</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_installationfailed_subtitle">Automatická inštalácia služby Everything zlyhala. Prosím, nainštalujte ju manuálne z https://www.voidtools.com</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_run_service">Kliknutím sem ju spustíte</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_installing_select">Nepodarilo sa nájsť inštaláciu Everything, chcete manuálne vybrať jej umiestnenie?{0}{0}Kliknutím na nie sa Everything automaticky nainštaluje</system:String>
 
