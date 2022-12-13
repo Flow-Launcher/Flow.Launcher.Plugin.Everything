@@ -8,8 +8,8 @@
     <system:String x:Key="flowlauncher_plugin_everything_open_containing_folder">Öffne enthaltenden Ordner</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_open_with_editor">Openen met {0}</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_editor_path">Editor pad</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_copy_path">Copy path</system:String>
-    <system:String x:Key="flowlauncher_plugin_everything_copy">Copy</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_copy_path">Pfad kopieren</system:String>
+    <system:String x:Key="flowlauncher_plugin_everything_copy">Kopieren</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_delete">Löschen</system:String>
     <system:String x:Key="flowlauncher_plugin_everything_canot_delete">Can't delete {0}</system:String>
 
